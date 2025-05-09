@@ -8,8 +8,10 @@
     "\\resources\\views",
     "\\resources\\views\\invitaciones",
     "\\resources\\views\\invitaciones\\catalogo",
+    "\\resources\\views\\plantillas",
+    "\\resources\\views\\plantillas\\boda",
     "\\routes"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\CatalogoInvitacionesController.php",
+  "SelectedNode": "\\composer.lock",
   "PreviewInSolutionExplorer": false
 }

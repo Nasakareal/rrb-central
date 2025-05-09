@@ -2,16 +2,24 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CatalogoInvitacionesController;
 
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 Route::get('/sistemas', [HomeController::class, 'systems'])->name('sistemas');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 
-// Rutas para Catalogo de Invitaciones
+
+
+// Vista de cada plantilla individual
 Route::prefix('disenos-invitaciones')->group(function () {
-    Route::get('/', [App\Http\Controllers\CatalogoInvitacionesController::class, 'index'])->name('catalogo.index');
-    Route::get('/{categoria}', [App\Http\Controllers\CatalogoInvitacionesController::class, 'show'])->name('catalogo.show');
+    Route::get('/', [CatalogoInvitacionesController::class, 'index'])
+         ->name('catalogo.index');
+    Route::get('/{categoria}', [CatalogoInvitacionesController::class, 'show'])
+         ->name('catalogo.show');
+    Route::get('/{categoria}/{plantilla}', [CatalogoInvitacionesController::class, 'verPlantilla'])
+         ->name('plantilla.ver');
 });
+
 
 
 // Rutas para Invitaciones
