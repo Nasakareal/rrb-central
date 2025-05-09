@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/favicon.ico') }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistemas RRB</title>
@@ -30,6 +31,18 @@
           </div>
         </div>
       </div>
+        <!-- Invitaciones Inteligentes -->
+        <div class="col-md-4">
+            <div class="card card-hover h-100 text-center">
+            <div class="card-body">
+                <img src="{{ asset('public/invitation.png') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
+                <h5 class="card-title mt-3">Invitaciones Inteligentes</h5>
+                <p class="card-text">Catálogo de diseños para eventos: bodas, XV años, convivios, y más.</p>
+                <a href="{{ route('catalogo.index') }}" class="btn btn-primary">Ver diseños</a>
+            </div>
+            </div>
+        </div>
+
       <!-- Inventarios -->
       <div class="col-md-4">
         <div class="card card-hover h-100 text-center">

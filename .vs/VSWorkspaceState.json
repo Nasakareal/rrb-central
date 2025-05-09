@@ -4,11 +4,12 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\public",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\invitaciones\\catalogo",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\welcome.blade.php",
+  "SelectedNode": "\\app\\Http\\Controllers\\CatalogoInvitacionesController.php",
   "PreviewInSolutionExplorer": false
 }
