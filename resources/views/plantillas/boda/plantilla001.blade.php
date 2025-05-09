@@ -116,7 +116,7 @@
   <!-- 1) HERO DE LOS NOVIOS -->
   <section class="hero">
     <img
-      src="{{ asset('public/images/plantillas/boda/plantilla001/hero.jpg') }}"
+      src="{{ asset('images/plantillas/boda/plantilla001/hero.jpg') }}"
       alt="Foto de los novios">
   </section>
 

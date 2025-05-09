@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catálogo de Invitaciones</title>
@@ -51,7 +51,7 @@
       @foreach ($categorias as $clave => $cat)
         <div class="col-lg-3 col-md-4 col-sm-6 filtrable category-{{ $clave }} animate__animated animate__zoomIn">
           <div class="card card-hover h-100 text-center">
-            <img src="{{ asset('public/images/catalogo/' . $cat['imagen']) }}" 
+            <img src="{{ asset('images/catalogo/' . $cat['imagen']) }}" 
                  class="img-fluid mx-auto d-block mt-4" 
                  style="max-height: 180px; border-radius: 10px;" 
                  alt="{{ $cat['nombre'] }}">

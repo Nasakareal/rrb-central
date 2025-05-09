@@ -1,17 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\resources",
-    "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\catalogo",
-    "\\resources\\views\\plantillas",
-    "\\resources\\views\\plantillas\\boda",
-    "\\routes"
+    "\\public"
   ],
-  "SelectedNode": "\\composer.lock",
+  "SelectedNode": "\\public\\.htaccess",
   "PreviewInSolutionExplorer": false
 }

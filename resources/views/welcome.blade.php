@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="{{ asset('public/favicon.ico') }}">
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <title>RRB Central</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Animate.css para animaciones sencillas -->
@@ -12,7 +12,7 @@
     /* Hero con imagen de fondo y overlay semi-oscuro */
     .hero {
       position: relative;
-      background: url('{{ asset('public/prueba.png') }}') no-repeat center center;
+      background: url('{{ asset('prueba.png') }}') no-repeat center center;
       background-size: cover;
       color: #fff;
       height: 80vh;
