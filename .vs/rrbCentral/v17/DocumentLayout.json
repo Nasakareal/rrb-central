@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\wamp64\\www\\rrbCentral\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\resources\\views\\plantillas\\boda\\plantilla001.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\plantillas\\boda\\plantilla001.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\public\\css\\plantillas\\boda\\plantilla001.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\css\\plantillas\\boda\\plantilla001.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\resources\\views\\welcome.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\welcome.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\resources\\views\\systems.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\systems.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\routes\\web.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:routes\\web.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\app\\Http\\Controllers\\HomeController.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\HomeController.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\resources\\views\\home.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\home.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrbCentral\\resources\\views\\about.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\about.blade.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,80 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "welcome.blade.php",
               "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\welcome.blade.php",
               "RelativeDocumentMoniker": "resources\\views\\welcome.blade.php",
               "ToolTip": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\welcome.blade.php",
               "RelativeToolTip": "resources\\views\\welcome.blade.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABJAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T06:19:57.607Z",
+              "WhenOpened": "2025-05-12T00:59:05.511Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "about.blade.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\about.blade.php",
-              "RelativeDocumentMoniker": "resources\\views\\about.blade.php",
-              "ToolTip": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\about.blade.php",
-              "RelativeToolTip": "resources\\views\\about.blade.php",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAuwCYAAAAAAAAAAAAAAA==",
-              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T06:00:48.026Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "home.blade.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\home.blade.php",
-              "RelativeDocumentMoniker": "resources\\views\\home.blade.php",
-              "ToolTip": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\home.blade.php",
-              "RelativeToolTip": "resources\\views\\home.blade.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:57:42.644Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "systems.blade.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\systems.blade.php",
-              "RelativeDocumentMoniker": "resources\\views\\systems.blade.php",
-              "ToolTip": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\systems.blade.php",
-              "RelativeToolTip": "resources\\views\\systems.blade.php",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAuwEEAAAAAAAAAAAAAAA==",
-              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:57:37.401Z"
+              "Title": "plantilla001.css",
+              "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\public\\css\\plantillas\\boda\\plantilla001.css",
+              "RelativeDocumentMoniker": "public\\css\\plantillas\\boda\\plantilla001.css",
+              "ToolTip": "C:\\wamp64\\www\\rrbCentral\\public\\css\\plantillas\\boda\\plantilla001.css",
+              "RelativeToolTip": "public\\css\\plantillas\\boda\\plantilla001.css",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAgwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-12T00:58:25.98Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\app\\Http\\Controllers\\HomeController.php",
-              "RelativeDocumentMoniker": "app\\Http\\Controllers\\HomeController.php",
-              "ToolTip": "C:\\wamp64\\www\\rrbCentral\\app\\Http\\Controllers\\HomeController.php",
-              "RelativeToolTip": "app\\Http\\Controllers\\HomeController.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "plantilla001.blade.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\plantillas\\boda\\plantilla001.blade.php",
+              "RelativeDocumentMoniker": "resources\\views\\plantillas\\boda\\plantilla001.blade.php",
+              "ToolTip": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\plantillas\\boda\\plantilla001.blade.php",
+              "RelativeToolTip": "resources\\views\\plantillas\\boda\\plantilla001.blade.php",
+              "ViewState": "AgIAAIgBAAAAAAAAAAAAAIgBAAAJAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:57:11.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "web.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrbCentral\\routes\\web.php",
-              "RelativeDocumentMoniker": "routes\\web.php",
-              "ToolTip": "C:\\wamp64\\www\\rrbCentral\\routes\\web.php",
-              "RelativeToolTip": "routes\\web.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:56:53.948Z"
+              "WhenOpened": "2025-05-12T00:54:53.141Z",
+              "EditorCaption": ""
             }
           ]
         }

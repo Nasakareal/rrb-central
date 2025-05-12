@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "resources\\views\\welcome.blade.php",
               "ToolTip": "C:\\wamp64\\www\\rrbCentral\\resources\\views\\welcome.blade.php",
               "RelativeToolTip": "resources\\views\\welcome.blade.php",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAIsAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAAKAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
               "WhenOpened": "2025-05-06T06:19:57.607Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "resources\\views\\about.blade.php",
               "ViewState": "AgIAAAgAAAAAAAAAAAAuwCYAAAAAAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T06:00:48.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T06:00:48.026Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "resources\\views\\home.blade.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:57:42.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T05:57:42.644Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "resources\\views\\systems.blade.php",
               "ViewState": "AgIAAAsAAAAAAAAAAAAuwEEAAAAAAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:57:37.401Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T05:57:37.401Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "app\\Http\\Controllers\\HomeController.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:57:11.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T05:57:11.375Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "routes\\web.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
-              "WhenOpened": "2025-05-06T05:56:53.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T05:56:53.948Z"
             }
           ]
         }

@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: #f0f0f0;
+}
+
+/* 1) HERO */
+.hero {
+    height: 80vh;
+    overflow: hidden;
+}
+
+    .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* 2) RECUERDO */
+.memory {
+    padding: 4rem 1rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+    .memory h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #4e54c8;
+    }
+
+    .memory p {
+        font-size: 1.25rem;
+        color: #333;
+        max-width: 700px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+/* 3) TARJETA BLANCA (ahora en flujo normal, debajo de memory) */
+.info-card {
+    max-width: 800px;
+    margin: 2rem auto; /* espacio arriba y abajo */
+    background: #ffffff; /* fondo blanco sólido */
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+    .info-card h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+
+    .info-card .couple {
+        font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #555;
+    }
+
+    .info-card hr {
+        border-color: #ccc;
+        margin: 2rem 0;
+    }
+
+.padrino-group {
+    margin-bottom: 2rem;
+}
+
+    .padrino-group h5 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: .5rem;
+        color: #333;
+    }
+
+    .padrino-group p {
+        font-family: 'Great Vibes', cursive;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: .5rem 0;
+        position: relative;
+    }
+
+        .padrino-group p + p::before {
+            content: "—";
+            position: absolute;
+            left: 50%;
+            top: -1rem;
+            transform: translateX(-50%);
+            color: #ccc;
+        }
+
+    .invite-text {
+        text-align: center;
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 1rem;
+    }
+
+.petalo {
+    position: fixed;
+    top: -50px;
+    width: 35px;
+    height: 22px;
+    background: radial-gradient(circle at 50% 40%, #d80027, #a0001d);
+    border-radius: 50% 70% 50% 50% / 60% 80% 40% 40%;
+    transform: rotate(-20deg) skewX(-10deg);
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 9999;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(15px) translateY(50vh) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(-15px) translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.vertical-line {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 2px;
+    height: calc(100% - 50px);
+    background-color: #c5a900;
+    transform: translateX(-50%);
+    z-index: 1;
+}

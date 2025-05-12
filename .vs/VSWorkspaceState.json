@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public"
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\plantillas",
+    "\\resources",
+    "\\resources\\css",
+    "\\resources\\views",
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\plantillas",
+    "\\resources\\views\\plantillas\\boda"
   ],
-  "SelectedNode": "\\public\\.htaccess",
+  "SelectedNode": "\\resources\\views\\plantillas\\boda\\plantilla001.blade.php",
   "PreviewInSolutionExplorer": false
 }
