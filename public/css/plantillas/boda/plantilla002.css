@@ -1,0 +1,270 @@
+/* — GLOBAL — */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* — CONTENEDOR DEL “LIBRO” — */
+#book {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* — PORTADA TIPO LIBRO — */
+.book-cover {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto 2rem auto;
+    background: #0a2342;
+    border: 8px solid #d4af37;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Si ya no quieres SVG externos, coméntalos o sustituye por puro CSS */
+.ornament {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('/images/ornament.svg') no-repeat center/contain;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: rotate(270deg);
+}
+
+.silhouette {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 100px;
+    height: 120px;
+    transform: translateX(-50%);
+    background: url('/images/silhouette.svg') no-repeat center/contain;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.ribbon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    transform: translateY(-50%);
+    background: #c72e41;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.jewel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%,-50%) rotate(45deg);
+    background: #0056b3;
+    border: 4px solid #d4af37;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+/* — NAVEGACIÓN POR PÁGINAS — */
+.page {
+    display: none;
+    width: 100%;
+}
+
+    .page.current {
+        display: block;
+    }
+
+.nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 100;
+    user-select: none;
+}
+
+    .nav.left {
+        left: 1rem;
+    }
+
+    .nav.right {
+        right: 1rem;
+    }
+
+    .nav:hover {
+        color: rgba(0,0,0,0.6);
+    }
+
+/* — DOBLE PÁGINA (SPREAD) — */
+.spread {
+    display: flex;
+    position: relative;
+    margin: 0 auto 2rem auto;
+    background: #fdfdf7;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
+    overflow: visible;
+    min-height: 75vh; /* altura fija mínima */
+    border-top: 20px solid #0a2342; /* pasta superior */
+    border-bottom: 20px solid #0a2342; /* pasta inferior */
+}
+
+    /* lomo dorado */
+    .spread::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 6px;
+        height: 100%;
+        background: #d4af37;
+        transform: translateX(-50%);
+        z-index: 5;
+    }
+
+/* páginas lado a lado */
+.page-half {
+    flex: 1;
+    position: relative;
+    background: #fdfdf7;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    overflow: visible;
+    padding: 1rem;
+}
+
+    /* solapas azules */
+    .page-half.left-page::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 20px;
+        height: 100%;
+        background: #0a2342;
+        z-index: 2;
+    }
+
+    .page-half.right-page::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -20px;
+        width: 20px;
+        height: 100%;
+        background: #0a2342;
+        z-index: 2;
+    }
+
+    /* — HERO (izquierda) — */
+    .page-half.left-page .hero {
+        margin: 0;
+        height: 100%;
+    }
+
+        .page-half.left-page .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    /* — MEMORY (derecha) — */
+    .page-half.right-page {
+        padding: 2rem;
+        background-image: repeating-linear-gradient( to bottom, #fdfdf7, #fdfdf7 30px, #e0e0e0 31px );
+        border-left: 4px solid #f28c8c;
+    }
+
+        .page-half.right-page .memory {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+
+
+
+
+
+
+.petalo {
+    position: fixed;
+    top: -50px;
+    width: 35px;
+    height: 22px;
+    background: radial-gradient(circle at 50% 40%, #d80027, #a0001d);
+    border-radius: 50% 70% 50% 50% / 60% 80% 40% 40%;
+    transform: rotate(-20deg) skewX(-10deg);
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 9999;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(15px) translateY(50vh) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(-15px) translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.vertical-line {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 2px;
+    height: calc(100% - 50px);
+    background-color: #c5a900;
+    transform: translateX(-50%);
+    z-index: 1;
+}

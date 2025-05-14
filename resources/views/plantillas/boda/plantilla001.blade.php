@@ -309,10 +309,9 @@
         </div>
     </section>
 
-    <!-- 7) MESA DE REGALOS -->
+    <!-- 8) FOTOS -->
     <section class="gallery-section py-5 animate__animated animate__fadeInUp">
-        <div>
-            class="container text-center">
+        <div class="container text-center">
             <h2 class="mb-4" style="font-family: 'Playfair Display', serif; letter-spacing: 2px;">
                 NUESTROS MOMENTOS
             </h2>
@@ -329,7 +328,7 @@
                     </div>
                     <!-- Imagen 3 -->
                     <div class="carousel-item">
-                        <img src="{{ asset('images/galeria/foto3.jpg') }}" class="d-block w-100" alt="Foto 3">
+                        <img src="{{ asset('images/galeria/foto3.jpeg') }}" class="d-block w-100" alt="Foto 3">
                     </div>
                 </div>
 
@@ -346,12 +345,12 @@
             <div class="d-flex justify-content-center gap-2 flex-wrap">
                 <img src="{{ asset('images/galeria/foto1.jpg') }}" alt="Miniatura 1" width="80" class="img-thumbnail" style="cursor:pointer;" onclick="selectSlide(0)">
                 <img src="{{ asset('images/galeria/foto2.jpg') }}" alt="Miniatura 2" width="80" class="img-thumbnail" style="cursor:pointer;" onclick="selectSlide(1)">
-                <img src="{{ asset('images/galeria/foto3.jpg') }}" alt="Miniatura 3" width="80" class="img-thumbnail" style="cursor:pointer;" onclick="selectSlide(2)">
+                <img src="{{ asset('images/galeria/foto3.jpeg') }}" alt="Miniatura 3" width="80" class="img-thumbnail" style="cursor:pointer;" onclick="selectSlide(2)">
             </div>
         </div>
     </section>
 
-    <!-- 8) INVITACIÓN -->
+    <!-- 9) INVITACIÓN -->
     <section class="invitation-section py-5 animate__animated animate__fadeInUp">
       <div class="container text-center">
         <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2rem;">
@@ -388,7 +387,7 @@
       </div>
     </section>
 
-    <!-- 9) INVITACIÓN -->
+    <!-- 10) INVITACIÓN -->
     <section class="confirm-section py-5 animate__animated animate__fadeInUp">
       <div class="container text-center">
         <h2 class="mb-3" style="font-family: 'Playfair Display', serif; font-size: 2rem;">
