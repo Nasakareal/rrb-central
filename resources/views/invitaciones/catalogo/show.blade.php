@@ -41,43 +41,39 @@
   </section>
 
   <div class="container py-5">
-    <div class="row g-4">
-      @forelse ($plantillas as $plantilla)
-        <div class="col-lg-3 col-md-4 col-sm-6 animate__animated animate__fadeInUp">
-          <div class="card card-hover h-100 text-center">
-            @php
-              $previewPath = "images/catalogo/$categoria/{$plantilla['nombre_archivo']}.png";
-            @endphp
+      <div class="row g-4">
+        @forelse ($plantillas as $plantilla)
+          <div class="col-lg-3 col-md-4 col-sm-6 animate__animated animate__fadeInUp">
+            <div class="card card-hover h-100 text-center">
+              @php
+                $previewFile = $plantilla['nombre_archivo'] . '.png';
+                $previewPath = "images/catalogo/$categoria/$previewFile";
+                $defaultPath = "images/catalogo/default.png";
+              @endphp
 
-            @if (file_exists(public_path($previewPath)))
               <img
-                src="{{ asset($previewPath) }}"
+                src="{{ asset(file_exists(public_path($previewPath)) ? $previewPath : $defaultPath) }}"
                 class="img-fluid img-preview mx-auto mt-3"
-                alt="Diseño {{ $plantilla['nombre'] }}">
-            @else
-              <img
-                src="{{ asset('images/catalogo/default.png') }}"
-                class="img-fluid img-preview mx-auto mt-3"
-                alt="Sin vista previa">
-            @endif
+                alt="Vista previa de {{ $plantilla['nombre'] }}">
 
-            <div class="card-body">
-              <h5 class="card-title">{{ $plantilla['nombre'] }}</h5>
-              <a href="{{ $plantilla['ruta'] }}" class="btn btn-outline-primary">
-                Ver plantilla
-              </a>
+              <div class="card-body">
+                <h5 class="card-title">{{ $plantilla['nombre'] }}</h5>
+                <a href="{{ $plantilla['ruta'] }}" class="btn btn-outline-primary">
+                  Ver plantilla
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      @empty
-        <div class="col-12 text-center">
-          <p class="text-muted">
-            No hay diseños disponibles en esta categoría por el momento.
-          </p>
-        </div>
-      @endforelse
+        @empty
+          <div class="col-12 text-center">
+            <p class="text-muted">
+              No hay diseños disponibles en esta categoría por el momento.
+            </p>
+          </div>
+        @endforelse
+      </div>
     </div>
-  </div>
+
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">

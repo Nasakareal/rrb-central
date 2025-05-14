@@ -1,0 +1,201 @@
+/* — VARIABLES DE PALETA — */
+:root {
+    --pink-bg: #f7c6b9; /* rosa suave (fondo general) */
+    --navy: #0a2342; /* azul oscuro (texto, bordes) */
+    --gold: #d4af37; /* dorado (acento y botones) */
+}
+
+/* — GLOBAL — */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: var(--pink-bg);
+    overflow-x: hidden;
+}
+
+/* — CONTENEDOR PLANTILLA 003 — */
+#template003 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
+}
+
+/* — TARJETA DE INVITACIÓN — */
+.invitation-card {
+    background: var(--pink-bg);
+    border: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: none;
+}
+
+/* — GIF CENTRAL — */
+.invitation-gif {
+    display: block;
+    margin: 0 auto;
+    max-width: 60%;
+    height: auto;
+}
+
+/* — BOTONES DE SECCIÓN — */
+.buttons-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.btn-invitation {
+    position: absolute;
+    min-width: 80px; /* ancho mínimo para texto */
+    height: 36px;
+    padding: 0 .5rem;
+    background: var(--gold);
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    border-radius: 18px; /* pastilla */
+    font-size: .9rem;
+    line-height: 36px; /* centra verticalmente */
+    white-space: nowrap; /* no salte líneas */
+    text-align: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background .2s;
+}
+
+    .btn-invitation:hover {
+        background: #f9e8b0; /* dorado más claro */
+    }
+
+    /* — POSICIONAMIENTO DE BOTONES — */
+    .btn-invitation[data-pos="1"] {
+        top: -5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn-invitation[data-pos="2"] {
+        top: 25%;
+        right: 5%;
+        transform: translate(50%, -50%);
+    }
+
+    .btn-invitation[data-pos="3"] {
+        top: 50%;
+        right: 5%;
+        transform: translate(50%, -50%);
+    }
+
+    .btn-invitation[data-pos="4"] {
+        bottom: 25%;
+        right: 5%;
+        transform: translate(50%, 50%);
+    }
+
+    .btn-invitation[data-pos="5"] {
+        bottom: -5%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+
+    .btn-invitation[data-pos="6"] {
+        bottom: 25%;
+        left: 5%;
+        transform: translate(-50%, 50%);
+    }
+
+    .btn-invitation[data-pos="7"] {
+        top: 50%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn-invitation[data-pos="8"] {
+        top: 25%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn-invitation[data-pos="9"] {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+/* — ANIMACIÓN DE PÉTALOS — */
+.petalo {
+    position: fixed;
+    top: -50px;
+    width: 35px;
+    height: 22px;
+    background: radial-gradient(circle at 50% 40%, #d80027, #a0001d);
+    border-radius: 50% 70% 50% 50% / 60% 80% 40% 40%;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 9999;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(15px) translateY(50vh) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(-15px) translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* — LÍNEA VERTICAL PARA ITINERARIO — */
+.vertical-line {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 2px;
+    height: calc(100% - 50px);
+    background-color: #c5a900;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* — SECCIÓN “UN RECUERDO ESPECIAL” — */
+.welcome-section {
+    overflow: visible;
+}
+
+.welcome-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.welcome-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}

@@ -1,18 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
     "\\public",
     "\\public\\css",
     "\\public\\css\\plantillas",
     "\\public\\css\\plantillas\\boda",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\invitaciones\\catalogo",
     "\\resources\\views\\plantillas",
     "\\resources\\views\\plantillas\\boda"
   ],
-  "SelectedNode": "\\public\\css\\plantillas\\boda\\plantilla001.css",
+  "SelectedNode": "\\resources\\views\\plantillas\\boda\\plantilla001.blade.php",
   "PreviewInSolutionExplorer": false
 }
