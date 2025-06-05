@@ -498,7 +498,7 @@
     </script>
 
     <script>
-        const countDownDate = new Date("Jul 07, 2029 00:00:00").getTime();
+        const countDownDate = new Date("Jul 19, 2025 00:00:00").getTime();
 
         setInterval(function () {
             const now = new Date().getTime();
