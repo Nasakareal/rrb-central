@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\css",
-    "\\public\\css\\plantillas",
-    "\\public\\css\\plantillas\\boda",
-    "\\public\\css\\plantillas\\xv",
+    "\\public\\images",
+    "\\public\\images\\plantillas",
+    "\\public\\images\\plantillas\\boda",
+    "\\public\\images\\plantillas\\xv",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\plantillas",
     "\\resources\\views\\plantillas\\xv"
   ],
-  "SelectedNode": "\\public\\css\\plantillas\\xv\\plantilla001.css",
+  "SelectedNode": "\\public\\images\\plantillas\\boda\\plantilla001",
   "PreviewInSolutionExplorer": false
 }

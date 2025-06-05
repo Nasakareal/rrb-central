@@ -35,7 +35,7 @@
     <!-- 2) RECUERDO -->
     <section class="memory animate__animated animate__fadeInUp">
         <div class="container">
-            <h2>Mis xv años<br>Camila Millan</h2>
+            <h2>Mis xv años<br>Camila Millan Calderón</h2>
             <p>
                 Gracias por ser parte de este momento tan especial.  
                 Mis XV años marcan el inicio de un nuevo capítulo en mi vida,  
@@ -50,19 +50,13 @@
           <img src="{{ asset('images/plantillas/xv/plantilla001/ornamental.png') }}" alt="Divisor decorativo" style="width: 150px;">
         </div>
         <h2>Mis Padres</h2>
-        <p class="couple">Millan &amp; China</p>
-
-        <div class="padrino-group">
-            <h5>Padrino de Arras</h5>
-            <p>Víctor Hugo Guerra Escamilla</p>
-        </div>
-        <hr>
+        <p class="couple">Adolfo Millan Montes &amp; Marisela Calderón Cortez</p>
         
 
         <div class="padrino-group">
             <h5>Mis Padrinos</h5>
-            <p>Cyntia Aguirre</p>
-            <p>Claudia Aguirre</p>
+            <p>DUARTE BAEZ</p>
+            <p>LUIS BAEZ</p>
         </div>
         <hr>
 
