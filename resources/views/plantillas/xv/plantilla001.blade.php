@@ -55,8 +55,8 @@
 
         <div class="padrino-group">
             <h5>Mis Padrinos</h5>
-            <p>DUARTE BAEZ</p>
-            <p>LUIS BAEZ</p>
+            <p>Roberto Carlos Duarte Baez</p>
+            <p>Alondra Melchor Hernández</p>
         </div>
         <hr>
 
@@ -84,8 +84,8 @@
 
             <div class="mb-4">
                 <span style="font-size: 1.5rem; font-family: 'Great Vibes', cursive;">Julio</span>
-                <span style="font-size: 5rem; font-weight: bold; color: #9a7d00;">07</span>
-                <span style="font-size: 1.5rem;">2029</span>
+                <span style="font-size: 5rem; font-weight: bold; color: #9a7d00;">19</span>
+                <span style="font-size: 1.5rem;">2025</span>
             </div>
 
             <div class="d-flex justify-content-center gap-4 flex-wrap" id="countdown">
