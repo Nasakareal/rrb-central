@@ -70,7 +70,7 @@
   <header class="hero">
     <div class="container text-center hero-content animate__animated animate__fadeInDown">
       <h1 class="display-3 fw-bold">Bienvenido a RRB Central</h1>
-      <p class="lead mt-3">Tu hub confiable del soluciones informaticas.</p>
+      <p class="lead mt-3">Tu empresa confiable del soluciones informaticas.</p>
       <a href="{{ route('sistemas') }}" class="btn btn-primary btn-lg mt-4">Ver sistemas</a>
     </div>
   </header>
@@ -82,29 +82,29 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card feature-card text-center p-4 animate__animated animate__zoomIn">
-            <img src="https://img.icons8.com/ios-filled/64/4e54c8/rocket.png" class="mx-auto" alt="Misión">
+            <img src="{{ asset('goal.png') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
             <div class="card-body">
               <h5 class="card-title">Nuestra Misión</h5>
-              <p class="card-text">Crear un punto de acceso único, seguro y confiable para los sistemas digitales de UTM.</p>
+              <p class="card-text">Desarrollar y ofrecer múltiples soluciones digitales integradas desde una plataforma central, brindando acceso seguro, confiable y eficiente para distintas necesidades institucionales.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card feature-card text-center p-4 animate__animated animate__zoomIn animate__delay-1s">
-            <img src="https://img.icons8.com/ios-filled/64/4e54c8/vision.png" class="mx-auto" alt="Visión">
+            <img src="{{ asset('vision.png') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
             <div class="card-body">
               <h5 class="card-title">Nuestra Visión</h5>
-              <p class="card-text">Ser el referente en soluciones tecnológicas dentro de la UTM.</p>
+              <p class="card-text">Ser un referente en el desarrollo e integración de soluciones tecnológicas que impulsen la transformación digital de las organizaciones.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card feature-card text-center p-4 animate__animated animate__zoomIn animate__delay-2s">
-            <img src="https://img.icons8.com/ios-filled/64/4e54c8/target.png" class="mx-auto" alt="Metas">
+            <img src="{{ asset('commitment.png') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
             <div class="card-body">
               <h5 class="card-title">Metas & Compromisos</h5>
-              <p class="card-text mb-1">Lanzar integraciones, mejorar adopción y mantener uptime >99.5%.</p>
-              <p class="card-text">Actualizaciones, soporte y seguridad garantizados.</p>
+              <p class="card-text mb-1">Desarrollar nuevas integraciones, facilitar el uso del sistema y asegurar la disponibilidad continua para todos los usuarios.</p>
+                <p class="card-text">Brindar soporte técnico, actualizaciones constantes y mantener altos estándares de seguridad.</p>
             </div>
           </div>
         </div>
@@ -118,12 +118,18 @@
       <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Nuestros Clientes</h2>
       <div class="row justify-content-center g-4">
         <div class="col-md-6 text-center animate__animated animate__zoomIn">
-          <img src="https://img.icons8.com/ios-filled/80/4e54c8/government-building.png" alt="SSP Michoacán" class="img-fluid mb-3" style="max-height:80px;"/>
+          <img src="{{ asset('ssp.svg') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
           <h5>Secretaría de Seguridad Pública de Michoacán</h5>
         </div>
         <div class="col-md-6 text-center animate__animated animate__zoomIn animate__delay-1s">
-          <img src="https://img.icons8.com/ios-filled/80/4e54c8/university.png" alt="UTM" class="img-fluid mb-3" style="max-height:80px;"/>
+          <img src="{{ asset('utm.png') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
           <h5>Universidad Tecnológica de Morelia</h5>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6 text-center animate__animated animate__zoomIn">
+          <img src="{{ asset('transporte.jpg') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
+          <h5>Instituto del Transporte de Michoacán</h5>
         </div>
       </div>
     </div>

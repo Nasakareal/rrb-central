@@ -1,15 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\images",
-    "\\public\\images\\plantillas",
-    "\\public\\images\\plantillas\\boda",
-    "\\public\\images\\plantillas\\xv",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\invitaciones\\catalogo",
     "\\resources\\views\\plantillas",
     "\\resources\\views\\plantillas\\xv"
   ],
+  "SelectedNode": "\\resources\\views\\invitaciones\\catalogo\\show.blade.php",
   "PreviewInSolutionExplorer": false
 }

@@ -24,10 +24,10 @@
       <div class="col-md-4">
         <div class="card card-hover h-100 text-center">
           <div class="card-body">
-            <img src="https://img.icons8.com/ios-filled/64/4e54c8/calendar.png" alt="Carga Horaria">
+            <img src="{{ asset('schedule.png') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
             <h5 class="card-title mt-3">Carga Horaria</h5>
             <p class="card-text">Gestión de horarios escolares y asignaciones de salones.</p>
-            <a href="http://utmorelia.com/cargaHoraria" class="btn btn-primary">Ir a demo</a>
+            <a href="https://rrb-soluciones.com/cargaDemo/login/" class="btn btn-primary">Ir a demo</a>
           </div>
         </div>
       </div>
