@@ -1,13 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\cartas",
+    "\\resources\\views\\cartas\\plantillas",
+    "\\resources\\views\\cartas\\plantillas\\romanticas",
     "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\catalogo",
-    "\\resources\\views\\plantillas",
-    "\\resources\\views\\plantillas\\xv"
+    "\\resources\\views\\invitaciones\\catalogo"
   ],
-  "SelectedNode": "\\resources\\views\\invitaciones\\catalogo\\show.blade.php",
+  "SelectedNode": "\\resources\\views\\cartas\\plantillas\\romanticas\\plantilla001.blade.php",
   "PreviewInSolutionExplorer": false
 }

@@ -9,6 +9,16 @@ Route::get('/sistemas', [HomeController::class, 'systems'])->name('sistemas');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 
+// Vista pública de Cartas Digitales
+Route::prefix('disenos-cartas')->group(function () {
+    Route::get('/', [App\Http\Controllers\CatalogoCartasController::class, 'index'])
+         ->name('cartas.index');
+    Route::get('/{categoria}', [App\Http\Controllers\CatalogoCartasController::class, 'show'])
+         ->name('cartas.show');
+    Route::get('/{categoria}/{plantilla}', [App\Http\Controllers\CatalogoCartasController::class, 'verCarta'])
+         ->name('cartas.ver');
+});
+
 
 // Vista de cada plantilla individual
 Route::prefix('disenos-invitaciones')->group(function () {

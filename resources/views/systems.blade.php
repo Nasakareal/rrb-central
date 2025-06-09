@@ -20,17 +20,17 @@
   <div class="container py-5">
     <h2 class="mb-4 text-center">Nuestros Sistemas</h2>
     <div class="row g-4">
-      <!-- Carga Horaria -->
-      <div class="col-md-4">
+        <!-- Carga Horaria -->
+        <div class="col-md-4">
         <div class="card card-hover h-100 text-center">
-          <div class="card-body">
+            <div class="card-body">
             <img src="{{ asset('schedule.png') }}" alt="Invitaciones Inteligentes" class="img-fluid mx-auto d-block" style="max-height: 80px;">
             <h5 class="card-title mt-3">Carga Horaria</h5>
             <p class="card-text">Gestión de horarios escolares y asignaciones de salones.</p>
             <a href="https://rrb-soluciones.com/cargaDemo/login/" class="btn btn-primary">Ir a demo</a>
-          </div>
+            </div>
         </div>
-      </div>
+        </div>
         <!-- Invitaciones Inteligentes -->
         <div class="col-md-4">
             <div class="card card-hover h-100 text-center">
@@ -39,6 +39,17 @@
                 <h5 class="card-title mt-3">Invitaciones Inteligentes</h5>
                 <p class="card-text">Catálogo de diseños para eventos: bodas, XV años, convivios, y más.</p>
                 <a href="{{ route('catalogo.index') }}" class="btn btn-primary">Ver diseños</a>
+            </div>
+            </div>
+        </div>
+        <!-- Cartas -->
+        <div class="col-md-4">
+            <div class="card card-hover h-100 text-center">
+            <div class="card-body">
+                <img src="{{ asset('love-letter.png') }}" alt="Cartas Digitales" class="img-fluid mx-auto d-block" style="max-height: 80px;">
+                <h5 class="card-title mt-3">Cartas Digitales</h5>
+                <p class="card-text">Catálogo de diseños para cartas romanticas o mensajes emotivos.</p>
+                <a href="{{ route('cartas.index') }}" class="btn btn-primary">Ver diseños</a>
             </div>
             </div>
         </div>
