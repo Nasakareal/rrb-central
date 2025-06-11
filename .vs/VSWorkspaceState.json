@@ -11,6 +11,6 @@
     "\\resources\\views\\invitaciones\\Camila",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\welcome.blade.php",
+  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\show.blade.php",
   "PreviewInSolutionExplorer": false
 }

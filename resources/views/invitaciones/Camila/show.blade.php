@@ -3,7 +3,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <meta charset="UTF-8">
-  <title>Invitación de XV Años • Plantilla 001</title>
+  <title>Invitación de XV Años • Camila Millan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <!-- Bootstrap & Animate.css -->
@@ -245,7 +245,7 @@
 
                 <!-- Cena -->
                 <div class="row align-items-center mb-5">
-                    <div class="col-4 text-end text-warning-emphasis fw-bold">18:00hrs</div>
+                    <div class="col-4 text-end text-warning-emphasis fw-bold">21:00hrs</div>
                     <div class="col-4 text-center position-relative">
                         <div class="icon rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mx-auto" style="width: 50px; height: 50px; z-index: 2;">
                             <i class="bi bi-cup-hot-fill"></i>
@@ -331,15 +331,11 @@
                 <div class="carousel-inner">
                     <!-- Imagen 1 -->
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/plantillas/xv/plantilla001/mis1.jpg') }}" class="d-block w-100" alt="Foto 1">
+                        <img src="{{ asset('images/cami1.jpg') }}" class="d-block w-100" alt="Foto 1">
                     </div>
                     <!-- Imagen 2 -->
                     <div class="carousel-item">
-                        <img src="{{ asset('images/plantillas/xv/plantilla001/mis2.jpg') }}" class="d-block w-100" alt="Foto 2">
-                    </div>
-                    <!-- Imagen 3 -->
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/plantillas/xv/plantilla001/mis3.jpg') }}" class="d-block w-100" alt="Foto 3">
+                        <img src="{{ asset('images/cami2.jpg') }}" class="d-block w-100" alt="Foto 2">
                     </div>
                 </div>
 
@@ -354,9 +350,15 @@
 
             <!-- Miniaturas -->
             <div class="d-flex justify-content-center gap-2 flex-wrap">
-                <img src="{{ asset('images/plantillas/xv/plantilla001/mis1.jpg') }}" alt="Miniatura 1" width="80" class="img-thumbnail" style="cursor:pointer;" onclick="selectSlide(0)">
-                <img src="{{ asset('images/plantillas/xv/plantilla001/mis2.jpg') }}" width="80" class="img-thumbnail" style="cursor:pointer;" onclick="selectSlide(1)">
-                <img src="{{ asset('images/plantillas/xv/plantilla001/mis3.jpg') }}" width="80" class="img-thumbnail" style="cursor:pointer;" onclick="selectSlide(2)">
+                <img src="{{ asset('images/cami1.jpg') }}" alt="Miniatura 1"
+                     class="img-thumbnail"
+                     style="width: 80px; height: 100px; object-fit: cover; cursor: pointer;"
+                     onclick="selectSlide(0)">
+
+                <img src="{{ asset('images/cami2.jpg') }}"
+                     class="img-thumbnail"
+                     style="width: 80px; height: 100px; object-fit: cover; cursor: pointer;"
+                     onclick="selectSlide(1)">
             </div>
         </div>
     </section>
@@ -371,7 +373,7 @@
         <p class="mb-5" style="max-width: 700px; margin: auto;">
           Nos gustaría que pudieras asistir y compartir con nosotros este día tan especial.  
           Te rogamos confirmar tu asistencia antes del  
-          <strong style="color: #c5a900;">09 de DICIEMBRE del 2025</strong>.
+          <strong style="color: #c5a900;">30 de JUNIO del 2025</strong>.
         </p>
 
         <form action="{{ route('camila.confirmacion') }}" method="POST" class="text-start mx-auto" style="max-width: 750px;">
