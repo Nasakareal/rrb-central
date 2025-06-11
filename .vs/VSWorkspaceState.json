@@ -4,14 +4,13 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
+    "\\app\\Models",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\cartas",
-    "\\resources\\views\\cartas\\plantillas",
-    "\\resources\\views\\cartas\\plantillas\\romanticas",
     "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\catalogo"
+    "\\resources\\views\\invitaciones\\Camila",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\cartas\\plantillas\\romanticas\\plantilla001.blade.php",
+  "SelectedNode": "\\resources\\views\\welcome.blade.php",
   "PreviewInSolutionExplorer": false
 }

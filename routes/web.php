@@ -1,33 +1,31 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CatalogoInvitacionesController;
 
-Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
-Route::get('/sistemas', [HomeController::class, 'systems'])->name('sistemas');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
+Route::get('/sistemas', [App\Http\Controllers\HomeController::class, 'systems'])->name('sistemas');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+
+// Invitación Camila
+Route::get('/camila', [App\Http\Controllers\InvitacionRealController::class, 'show'])->name('camila.invitacion');
+Route::post('/camila/confirmar', [App\Http\Controllers\InvitacionRealController::class, 'confirmar'])->name('camila.confirmacion');
+Route::get('/camila/confirmados', [App\Http\Controllers\InvitacionRealController::class, 'listaConfirmados'])->name('camila.confirmados');
+
 
 
 // Vista pública de Cartas Digitales
 Route::prefix('disenos-cartas')->group(function () {
-    Route::get('/', [App\Http\Controllers\CatalogoCartasController::class, 'index'])
-         ->name('cartas.index');
-    Route::get('/{categoria}', [App\Http\Controllers\CatalogoCartasController::class, 'show'])
-         ->name('cartas.show');
-    Route::get('/{categoria}/{plantilla}', [App\Http\Controllers\CatalogoCartasController::class, 'verCarta'])
-         ->name('cartas.ver');
+    Route::get('/', [App\Http\Controllers\CatalogoCartasController::class, 'index'])->name('cartas.index');
+    Route::get('/{categoria}', [App\Http\Controllers\CatalogoCartasController::class, 'show'])->name('cartas.show');
+    Route::get('/{categoria}/{plantilla}', [App\Http\Controllers\CatalogoCartasController::class, 'verCarta'])->name('cartas.ver');
 });
 
 
 // Vista de cada plantilla individual
 Route::prefix('disenos-invitaciones')->group(function () {
-    Route::get('/', [CatalogoInvitacionesController::class, 'index'])
-         ->name('catalogo.index');
-    Route::get('/{categoria}', [CatalogoInvitacionesController::class, 'show'])
-         ->name('catalogo.show');
-    Route::get('/{categoria}/{plantilla}', [CatalogoInvitacionesController::class, 'verPlantilla'])
-         ->name('plantilla.ver');
+    Route::get('/', [App\Http\Controllers\CatalogoInvitacionesController::class, 'index'])->name('catalogo.index');
+    Route::get('/{categoria}', [App\Http\Controllers\CatalogoInvitacionesController::class, 'show'])->name('catalogo.show');
+    Route::get('/{categoria}/{plantilla}', [App\Http\Controllers\CatalogoInvitacionesController::class, 'verPlantilla'])->name('plantilla.ver');
 });
 
 

@@ -374,43 +374,44 @@
           <strong style="color: #c5a900;">09 de DICIEMBRE del 2025</strong>.
         </p>
 
-        <form action="#" method="POST" class="text-start mx-auto" style="max-width: 750px;">
+        <form action="{{ route('camila.confirmacion') }}" method="POST" class="text-start mx-auto" style="max-width: 750px;">
+          @csrf
           <div class="row g-3">
             <div class="col-md-6">
               <label for="nombre" class="form-label">Nombre completo del invitado</label>
-              <input type="text" class="form-control" id="nombre" required>
+              <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
 
             <div class="col-md-6">
               <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefono" required>
+              <input type="tel" class="form-control" id="telefono" name="telefono" required>
             </div>
 
             <div class="col-md-6">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
+              <input type="email" class="form-control" id="email" name="email" required>
             </div>
 
             <div class="col-md-6">
               <label for="asistencia" class="form-label">¿Podrás asistir?</label>
-              <select class="form-select" id="asistencia" required>
+              <select class="form-select" id="asistencia" name="asistencia" required>
                 <option selected disabled value="">Selecciona una opción</option>
-                <option>Sí, voy a ir.</option>
-                <option>No podré asistir.</option>
+                <option value="Sí">Sí, voy a ir.</option>
+                <option value="No">No podré asistir.</option>
               </select>
             </div>
 
             <div class="col-md-6">
               <label for="boletos" class="form-label">¿Usarás todos tus boletos asignados?</label>
-              <select class="form-select" id="boletos">
-                <option>Sí</option>
-                <option>No</option>
+              <select class="form-select" id="boletos" name="boletos">
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
               </select>
             </div>
 
             <div class="col-md-6">
               <label for="mensaje" class="form-label">¿Deseo para la quinceañera?</label>
-              <textarea class="form-control" id="mensaje" rows="3" placeholder="Opcional"></textarea>
+              <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Opcional"></textarea>
             </div>
           </div>
 
@@ -420,6 +421,7 @@
             </button>
           </div>
         </form>
+
 
         <!-- WhatsApp info -->
         <div class="mt-5">
