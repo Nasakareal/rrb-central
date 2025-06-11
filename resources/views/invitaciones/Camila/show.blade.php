@@ -363,6 +363,28 @@
         </div>
     </section>
 
+    <!-- 7.5) GALERÍA DE FOTOS DE INVITADOS -->
+    <section class="photo-upload-section py-5 animate__animated animate__fadeInUp">
+        <div class="container text-center">
+            <div style="text-align:center; margin: 2rem 0;">
+                <img src="{{ asset('images/plantillas/xv/plantilla001/photographer.png') }}" alt="Divisor decorativo" style="width: 150px;">
+            </div>
+
+            <h2 class="mb-4" style="font-family: 'Playfair Display', serif; letter-spacing: 2px;">
+                TU FOTO EN MI RECUERDO
+            </h2>
+
+            <p class="mb-4" style="max-width: 700px; margin: auto;">
+                Si tomaste una foto bonita durante la fiesta, súbela a mi galería y haz este momento aún más especial.
+            </p>
+
+            <a href="{{ route('camila.galeria') }}" class="btn btn-outline-warning px-5 py-2">
+                📸 Ver y subir fotos
+            </a>
+        </div>
+    </section>
+
+
     <!-- 10) INVITACIÓN -->
     <section class="confirm-section py-5 animate__animated animate__fadeInUp">
       <div class="container text-center">
@@ -378,6 +400,7 @@
 
         <form action="{{ route('camila.confirmacion') }}" method="POST" class="text-start mx-auto" style="max-width: 750px;">
           @csrf
+            <input type="hidden" name="evento_id" value="{{ $evento->id }}">
           <div class="row g-3">
             <div class="col-md-6">
               <label for="nombre" class="form-label">Nombre completo del invitado</label>

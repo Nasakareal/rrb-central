@@ -10,7 +10,11 @@ Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->nam
 Route::get('/camila', [App\Http\Controllers\InvitacionRealController::class, 'show'])->name('camila.invitacion');
 Route::post('/camila/confirmar', [App\Http\Controllers\InvitacionRealController::class, 'confirmar'])->name('camila.confirmacion');
 Route::get('/camila/confirmados', [App\Http\Controllers\InvitacionRealController::class, 'listaConfirmados'])->name('camila.confirmados');
-
+Route::post('/camila/foto', [\App\Http\Controllers\FotoEventoController::class, 'store'])->name('camila.foto.subir');
+Route::get('/camila/fotos', function () {
+    $evento = \App\Models\Evento::where('codigo_unico', 'camila')->firstOrFail();
+    return view('invitaciones.Camila.galeria', compact('evento'));
+})->name('camila.galeria');
 
 
 // Vista pública de Cartas Digitales

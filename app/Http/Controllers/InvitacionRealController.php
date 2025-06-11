@@ -9,7 +9,8 @@ class InvitacionRealController extends Controller
 {
     public function show()
     {
-        return view('invitaciones.Camila.show');
+        $evento = \App\Models\Evento::where('codigo_unico', 'camila')->firstOrFail();
+        return view('invitaciones.Camila.show', compact('evento'));
     }
 
     public function confirmar(Request $request)
@@ -23,7 +24,13 @@ class InvitacionRealController extends Controller
             'mensaje'    => 'nullable|string',
         ]);
 
-        Confirmacion::create($validated);
+        // Obtenemos el evento por su código único
+        $evento = \App\Models\Evento::where('codigo_unico', 'camila')->firstOrFail();
+
+        // Guardamos la confirmación vinculada al evento
+        Confirmacion::create(array_merge($validated, [
+            'evento_id' => $evento->id
+        ]));
 
         return redirect()->back()->with('success', '¡Gracias por confirmar tu asistencia!');
     }
