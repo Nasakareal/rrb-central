@@ -17,7 +17,8 @@
         rel="stylesheet">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="{{ asset('css/plantillas/xv/plantilla001.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plantillas/xv/plantilla001.css') }}?v={{ time() }}">
+
 
 </head>
 <body>
@@ -26,16 +27,16 @@
         Tu navegador no soporta audio HTML5.
     </audio>
 
-    <!-- 1) HERO DE LOS NOVIOS -->
+    <!-- 1) HERO DE LA QUINCEAÑERA -->
     <section class="hero">
-        <img src="{{ asset('images/plantillas/xv/plantilla001/cenicienta.jpg') }}"
+        <img src="{{ asset('images/plantillas/xv/plantilla001/scar2.png') }}"
              alt="Foto de los novios">
     </section>
 
     <!-- 2) RECUERDO -->
     <section class="memory animate__animated animate__fadeInUp">
         <div class="container">
-            <h2>Mis xv años<br>Zara Camila Millan Calderón</h2>
+            <h2>Mis xv años<br>Zara Camila Millán Calderón</h2>
             <p>
                 Gracias por ser parte de este momento tan especial.  
                 Mis XV años marcan el inicio de un nuevo capítulo en mi vida,  
@@ -50,7 +51,7 @@
           <img src="{{ asset('images/plantillas/xv/plantilla001/ornamental.png') }}" alt="Divisor decorativo" style="width: 150px;">
         </div>
         <h2>Mis Padres</h2>
-        <p class="couple">Adolfo Millan Montes &amp; Marisela Calderón Cortes</p>
+        <p class="couple">Adolfo Millán Montes &amp; Maricela Calderón Cortes</p>
         
         <hr>
         <div class="padrino-group">
@@ -77,9 +78,8 @@
 
     <!-- 4) FECHA -->
     <section class="wedding-date text-center py-5 animate__animated animate__fadeInUp">
-
         <div style="text-align:center; margin: 2rem 0;">
-          <img src="{{ asset('images/plantillas/xv/plantilla001/pumpkin.png') }}" alt="Divisor decorativo" style="width: 150px;">
+            <img src="{{ asset('images/plantillas/xv/plantilla001/lion.png') }}" alt="Divisor decorativo" style="width: 150px;">
         </div>
 
         <div class="container">
@@ -88,7 +88,7 @@
 
             <div class="mb-4">
                 <span style="font-size: 1.5rem; font-family: 'Great Vibes', cursive;">Julio</span>
-                <span style="font-size: 5rem; font-weight: bold; color: #9a7d00;">19</span>
+                <span style="font-size: 5rem; font-weight: bold; color: #258d6a;">19</span>
                 <span style="font-size: 1.5rem;">2025</span>
             </div>
 
@@ -113,6 +113,7 @@
         </div>
     </section>
 
+
     <!-- 4) LUGAR -->
     <section class="location-section text-center py-5 animate__animated animate__fadeInUp">
         <div class="container">
@@ -127,7 +128,7 @@
             </h2>
 
             <!-- Hora -->
-            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: #9a7d00;">
+            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: #258d6a;">
                 17:00 HRS
             </p>
 
@@ -152,7 +153,7 @@
 
             <!-- Botón -->
             <a href="https://maps.app.goo.gl/1fe7bNdXmnrozK6b8" target="_blank"
-               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #c5a900; color: #000;">
+               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #258d6a; color: #000;">
                 <i class="bi bi-geo-alt-fill"></i> CÓMO LLEGAR
             </a>
 
@@ -163,11 +164,11 @@
 
             <!-- Título -->
             <h2 class="mt-3" style="font-family: 'Great Vibes', cursive; font-size: 2.5rem;">
-                Ceremonia <span style="color: #c5a900;">&</span> Recepción
+                Ceremonia <span style="color: #258d6a;">&</span> Recepción
             </h2>
 
             <!-- Hora -->
-            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: #9a7d00;">
+            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: #258d6a;">
                 18:30 HRS
             </p>
 
@@ -192,7 +193,7 @@
 
             <!-- Botón -->
             <a href="https://maps.app.goo.gl/YDD6DNiMRQ8BmUtj9" target="_blank"
-               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #c5a900; color: #000;">
+               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #258d6a; color: #000;">
                 <i class="bi bi-geo-alt-fill"></i> CÓMO LLEGAR
             </a>
         </div>
@@ -275,24 +276,12 @@
 
             <div class="row justify-content-center">
 
-                <!-- HOMBRES -->
-                <div class="col-md-5 mb-4">
-                    <div class="p-4 border rounded-4 border-warning">
-                        <h5 class="text-uppercase text-warning-emphasis mb-3">Hombres</h5>
-                        <p style="font-size: 1rem;">
-                            Trajes en colores claros. <br>
-                            <strong class="text-danger">Evitar:</strong> amarillo, café, dorado o rojo.
-                        </p>
-                    </div>
-                </div>
-
                 <!-- MUJERES -->
                 <div class="col-md-5 mb-4">
                     <div class="p-4 border rounded-4 border-warning">
                         <h5 class="text-uppercase text-warning-emphasis mb-3">Mujeres</h5>
                         <p style="font-size: 1rem;">
-                            Vestidos largos vaporosos y tacón delgado. <br>
-                            <strong class="text-danger">Evitar:</strong> negro, café, dorado, plateado o turquesa.
+                            <strong class="text-danger">Evitar:</strong> negro y café.
                         </p>
                     </div>
                 </div>
@@ -309,13 +298,11 @@
 
         <div class="container text-center">
             <h2 class="mb-4" style="font-family: 'Playfair Display', serif; letter-spacing: 2px;">
-                LLUVIA DE SOBRES
+                MESA DE REGALOS
             </h2>
 
             <p class="mb-5" style="max-width: 700px; margin: auto;">
-                ¡El mejor regalo es compartir con ustedes este gran día!<br>
-                Si deseas hacerme un obsequio, lo más práctico para mí será en forma de sobre o apoyo económico.<br>
-                Gracias por acompañarme en esta nueva etapa.
+                Libre opción, si no encuentras que regalarme, habrá lluvia de sobres, o en la entrada se te proporcionará un sobre para la cantidad que desees regalarme, y  podrás depositar en una caja que estará en el interior del Salón.
             </p>
         </div>
     </section>
@@ -395,7 +382,7 @@
         <p class="mb-5" style="max-width: 700px; margin: auto;">
           Nos gustaría que pudieras asistir y compartir con nosotros este día tan especial.  
           Te rogamos confirmar tu asistencia antes del  
-          <strong style="color: #c5a900;">30 de JUNIO del 2025</strong>.
+          <strong style="color: #258d6a;">30 de JUNIO del 2025</strong>.
         </p>
 
         <form action="{{ route('camila.confirmacion') }}" method="POST" class="text-start mx-auto" style="max-width: 750px;">

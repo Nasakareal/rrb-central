@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Models",
-    "\\database",
-    "\\database\\migrations",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\plantillas",
+    "\\public\\css\\plantillas\\xv",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\invitaciones",
     "\\resources\\views\\invitaciones\\Camila",
     "\\routes"
   ],
-  "SelectedNode": "\\database\\migrations\\2025_06_11_230541_add_ip_to_fotos_evento_table.php",
+  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\show.blade.php",
   "PreviewInSolutionExplorer": false
 }
