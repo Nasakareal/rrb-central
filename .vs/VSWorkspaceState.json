@@ -3,10 +3,10 @@
     "",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\cartas",
-    "\\resources\\views\\cartas\\plantillas",
-    "\\resources\\views\\cartas\\plantillas\\romanticas"
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\invitaciones\\Camila",
+    "\\resources\\views\\plantillas"
   ],
-  "SelectedNode": "\\resources\\views\\cartas\\plantillas\\romanticas\\plantilla005.blade.php",
+  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\show.blade.php",
   "PreviewInSolutionExplorer": false
 }

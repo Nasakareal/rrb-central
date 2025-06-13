@@ -429,7 +429,7 @@
         <!-- WhatsApp info -->
         <div class="mt-5">
           <p class="mb-2">¿Dudas sobre nuestro evento?</p>
-          <a href="https://wa.me/5210000000000" target="_blank" class="btn btn-success">
+          <a href="https://wa.me/524431648852" target="_blank" class="btn btn-success">
             <i class="bi bi-whatsapp"></i> WhatsApp
           </a>
         </div>
