@@ -302,7 +302,7 @@
             </h2>
 
             <p class="mb-5" style="max-width: 700px; margin: auto;">
-                Libre opción, si no encuentras que regalarme, habrá lluvia de sobres, o en la entrada se te proporcionará un sobre para la cantidad que desees regalarme, y  podrás depositar en una caja que estará en el interior del Salón.
+                Libre opción, si no encuentras que regalarme, habrá lluvia de sobres, en la entrada se te proporcionará un sobre para la cantidad que desees regalarme, y  podrás depositar en una caja que estará en el interior del Salón.
             </p>
         </div>
     </section>
@@ -318,11 +318,7 @@
                 <div class="carousel-inner">
                     <!-- Imagen 1 -->
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/cami1.jpg') }}" class="d-block w-100" alt="Foto 1">
-                    </div>
-                    <!-- Imagen 2 -->
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/cami2.jpg') }}" class="d-block w-100" alt="Foto 2">
+                        <img src="{{ asset('images/cami2.jpg') }}" class="d-block w-100" alt="Foto 1">
                     </div>
                 </div>
 
@@ -337,15 +333,10 @@
 
             <!-- Miniaturas -->
             <div class="d-flex justify-content-center gap-2 flex-wrap">
-                <img src="{{ asset('images/cami1.jpg') }}" alt="Miniatura 1"
+                <img src="{{ asset('images/cami2.jpg') }}" alt="Miniatura 1"
                      class="img-thumbnail"
                      style="width: 80px; height: 100px; object-fit: cover; cursor: pointer;"
                      onclick="selectSlide(0)">
-
-                <img src="{{ asset('images/cami2.jpg') }}"
-                     class="img-thumbnail"
-                     style="width: 80px; height: 100px; object-fit: cover; cursor: pointer;"
-                     onclick="selectSlide(1)">
             </div>
         </div>
     </section>

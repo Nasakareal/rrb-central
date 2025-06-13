@@ -128,7 +128,7 @@ section {
     top: -50px;
     width: 35px;
     height: 35px;
-    background: url('/rrb-central/public/images/plantillas/xv/plantilla001/feather.png') no-repeat center center / contain;
+    background: url('/images/plantillas/xv/plantilla001/feather.png') no-repeat center center / contain;
     opacity: 0.8;
     animation: caerMariposa linear infinite;
     pointer-events: none;
