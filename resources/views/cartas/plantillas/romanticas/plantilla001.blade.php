@@ -136,7 +136,7 @@
   </div>
 
   <div class="message">
-    <p>Amor de mi vida, cada vez que sonríes mi mundo se ilumina; tus ojos guardan la promesa de mil atardeceres juntos, y en cada susurro tuyo encuentro mi hogar. Te amo hoy, mañana y por toda la eternidad.</p>
+    <p>Tu mensaje aqui.</p>
     <div class="author">— RRB-Soluciones</div>
   </div>
 

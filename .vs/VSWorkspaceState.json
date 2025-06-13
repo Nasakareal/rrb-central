@@ -1,15 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\css",
-    "\\public\\css\\plantillas",
-    "\\public\\css\\plantillas\\xv",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\Camila",
-    "\\routes"
+    "\\resources\\views\\cartas",
+    "\\resources\\views\\cartas\\plantillas",
+    "\\resources\\views\\cartas\\plantillas\\romanticas"
   ],
+  "SelectedNode": "\\resources\\views\\cartas\\plantillas\\romanticas\\plantilla005.blade.php",
   "PreviewInSolutionExplorer": false
 }
