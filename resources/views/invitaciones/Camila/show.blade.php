@@ -376,55 +376,96 @@
           <strong style="color: #258d6a;">30 de JUNIO del 2025</strong>.
         </p>
 
-        <form action="{{ route('camila.confirmacion') }}" method="POST" class="text-start mx-auto" style="max-width: 750px;">
-          @csrf
-            <input type="hidden" name="evento_id" value="{{ $evento->id }}">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label for="nombre" class="form-label">Nombre completo del invitado</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" required>
+        @if($invitacion)
+
+          @if($invitacion->asistencia_confirmada)
+            <div class="alert alert-success">
+              <strong>✅ Asistencia confirmada.</strong><br>
+              Presenta este código QR en la entrada:
             </div>
 
-            <div class="col-md-6">
-              <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefono" name="telefono" required>
+            <div class="my-4">
+              <img src="{{ route('camila.qr', $invitacion->qr_token) }}" alt="QR de acceso" class="img-thumbnail">
+                <p class="mt-2 text-muted small">{{ $invitacion->user->name }} | {{ $invitacion->num_pases_confirmados }} pases</p>
             </div>
 
-            <div class="col-md-6">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+            <form action="{{ route('camila.logout') }}" method="POST" class="mt-3">
+              @csrf
+              <button type="submit" class="btn btn-outline-danger btn-sm">🔓 Cerrar sesión</button>
+            </form>
+
+          @else
+            <form action="{{ route('camila.confirmacion', $invitacion->id) }}" method="POST" class="text-start mx-auto" style="max-width: 750px;">
+              @csrf
+              <input type="hidden" name="evento_id" value="{{ $evento->id }}">
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label">Nombre completo del invitado</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $invitacion->user->name ?? '' }}" readonly>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" value="{{ $invitacion->user->email ?? '' }}" readonly>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="asistencia" class="form-label">¿Podrás asistir?</label>
+                  <select class="form-select" id="asistencia" name="asistencia" required>
+                    <option selected disabled value="">Selecciona una opción</option>
+                    <option value="Sí">Sí, voy a ir.</option>
+                    <option value="No">No podré asistir.</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="boletos" class="form-label">¿Usarás todos tus boletos asignados?</label>
+                  <select class="form-select" id="boletos" name="boletos">
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="mensaje" class="form-label">¿Deseo para la quinceañera?</label>
+                  <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Opcional"></textarea>
+                </div>
+              </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-outline-warning px-5 py-2">
+                  ✉️ Enviar
+                </button>
+              </div>
+            </form>
+
+            <form action="{{ route('camila.logout') }}" method="POST" class="mt-4">
+              @csrf
+              <button type="submit" class="btn btn-sm btn-outline-danger">🔓 Cerrar sesión</button>
+            </form>
+          @endif
+
+        @else
+          <form action="{{ route('camila.login') }}" method="POST" class="mx-auto" style="max-width: 500px;">
+            @csrf
+            <div class="mb-3">
+              <label for="credencial" class="form-label">Ingresa tu nombre o correo</label>
+              <input type="text" name="credencial" id="credencial" class="form-control" required>
             </div>
-
-            <div class="col-md-6">
-              <label for="asistencia" class="form-label">¿Podrás asistir?</label>
-              <select class="form-select" id="asistencia" name="asistencia" required>
-                <option selected disabled value="">Selecciona una opción</option>
-                <option value="Sí">Sí, voy a ir.</option>
-                <option value="No">No podré asistir.</option>
-              </select>
+            @error('credencial')
+              <div class="text-danger small">{{ $message }}</div>
+            @enderror
+            <div class="text-center">
+              <button class="btn btn-outline-primary" type="submit">🔐 Acceder</button>
             </div>
-
-            <div class="col-md-6">
-              <label for="boletos" class="form-label">¿Usarás todos tus boletos asignados?</label>
-              <select class="form-select" id="boletos" name="boletos">
-                <option value="Sí">Sí</option>
-                <option value="No">No</option>
-              </select>
-            </div>
-
-            <div class="col-md-6">
-              <label for="mensaje" class="form-label">¿Deseo para la quinceañera?</label>
-              <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Opcional"></textarea>
-            </div>
-          </div>
-
-          <div class="text-center mt-4">
-            <button type="submit" class="btn btn-outline-warning px-5 py-2">
-              ✉️ Enviar
-            </button>
-          </div>
-        </form>
-
+          </form>
+        @endif
 
         <!-- WhatsApp info -->
         <div class="mt-5">
@@ -435,7 +476,6 @@
         </div>
       </div>
     </section>
-
 
 
     </div>

@@ -25,4 +25,12 @@ class Evento extends Model
     {
         return $this->hasMany(FotoEvento::class);
     }
+
+    public function usuarios()
+    {
+        return $this->belongsToMany(User::class, 'invitaciones')
+                    ->withPivot('qr_token', 'asistencia_confirmada')
+                    ->withTimestamps();
+    }
+
 }

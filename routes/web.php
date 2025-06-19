@@ -6,15 +6,19 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('
 Route::get('/sistemas', [App\Http\Controllers\HomeController::class, 'systems'])->name('sistemas');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 
-// Invitación Camila
+// Vista fija: /camila
 Route::get('/camila', [App\Http\Controllers\InvitacionRealController::class, 'show'])->name('camila.invitacion');
-Route::post('/camila/confirmar', [App\Http\Controllers\InvitacionRealController::class, 'confirmar'])->name('camila.confirmacion');
-Route::get('/camila/confirmados', [App\Http\Controllers\InvitacionRealController::class, 'listaConfirmados'])->name('camila.confirmados');
-Route::post('/camila/foto', [\App\Http\Controllers\FotoEventoController::class, 'store'])->name('camila.foto.subir');
+Route::post('/camila/login', [App\Http\Controllers\InvitacionRealController::class, 'login'])->name('camila.login');
+Route::post('/camila/{id}/confirmar', [App\Http\Controllers\InvitacionRealController::class, 'confirmar'])->name('camila.confirmacion');
+Route::post('/camila/logout', [App\Http\Controllers\InvitacionRealController::class, 'logout'])->name('camila.logout');
+Route::post('/camila/foto', [App\Http\Controllers\FotoEventoController::class, 'store'])->name('camila.foto.subir');
+
 Route::get('/camila/fotos', function () {
     $evento = \App\Models\Evento::where('codigo_unico', 'camila')->firstOrFail();
     return view('invitaciones.Camila.galeria', compact('evento'));
 })->name('camila.galeria');
+
+Route::get('/camila/qr/{token}', [App\Http\Controllers\QrController::class, 'mostrarQr'])->name('camila.qr');
 
 
 // Vista pública de Cartas Digitales
