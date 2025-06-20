@@ -13,12 +13,19 @@ Route::post('/camila/{id}/confirmar', [App\Http\Controllers\InvitacionRealContro
 Route::post('/camila/logout', [App\Http\Controllers\InvitacionRealController::class, 'logout'])->name('camila.logout');
 Route::post('/camila/foto', [App\Http\Controllers\FotoEventoController::class, 'store'])->name('camila.foto.subir');
 
+Route::get('/camila/confirmados', function () {
+    $evento = \App\Models\Evento::where('codigo_unico', 'camila')->firstOrFail();
+    $confirmaciones = \App\Models\Confirmacion::where('evento_id', $evento->id)->latest()->get();
+    return view('invitaciones.Camila.confirmados', compact('confirmaciones'));
+})->name('camila.confirmados');
+
 Route::get('/camila/fotos', function () {
     $evento = \App\Models\Evento::where('codigo_unico', 'camila')->firstOrFail();
     return view('invitaciones.Camila.galeria', compact('evento'));
 })->name('camila.galeria');
 
 Route::get('/camila/qr/{token}', [App\Http\Controllers\QrController::class, 'mostrarQr'])->name('camila.qr');
+
 
 
 // Vista pública de Cartas Digitales

@@ -4,14 +4,14 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Models",
+    "\\database",
+    "\\database\\seeders",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\invitaciones",
     "\\resources\\views\\invitaciones\\Camila",
-    "\\resources\\views\\plantillas",
     "\\routes"
   ],
-  "SelectedNode": "\\app\\Models\\Invitacion.php",
+  "SelectedNode": "\\database\\seeders\\InvitadosConInvitacionesSeeder.php",
   "PreviewInSolutionExplorer": false
 }
