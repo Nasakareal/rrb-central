@@ -1,17 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\database",
-    "\\database\\seeders",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\plantillas",
+    "\\public\\css\\plantillas\\graduacion",
+    "\\public\\css\\plantillas\\xv",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\Camila",
-    "\\routes"
+    "\\resources\\views\\plantillas",
+    "\\resources\\views\\plantillas\\graduacion"
   ],
-  "SelectedNode": "\\database\\seeders\\InvitadosConInvitacionesSeeder.php",
+  "SelectedNode": "\\resources\\views\\invitaciones",
   "PreviewInSolutionExplorer": false
 }
