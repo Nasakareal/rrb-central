@@ -54,7 +54,6 @@
                 <img src="/images/catalogo/{{ $categoria }}/{{ $plantilla['nombre_archivo'] }}.png" onerror="this.onerror=null;this.src='/images/catalogo/default.png';">
 
 
-
               <div class="card-body">
                 <h5 class="card-title">{{ $plantilla['nombre'] }}</h5>
                 <a href="{{ $plantilla['ruta'] }}" class="btn btn-outline-primary">
