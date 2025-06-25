@@ -3,7 +3,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <meta charset="UTF-8">
-  <title>Invitación de XV Años • Camila Millan</title>
+  <title>Invitación de Boda • Plantilla 004</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <!-- Bootstrap & Animate.css -->
@@ -589,17 +589,22 @@
       }
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('activar-musica');
+        const audio = document.getElementById('bg-audio');
+
+        btn.addEventListener('click', () => {
+            audio.play();
+            btn.style.display = 'none';
+        });
+        });
+    </script>
+
     <button id="activar-musica"
             class="btn btn-sm btn-outline-dark"
             style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-      🔊 Activar Música
+        🔊 Activar Música
     </button>
-
-
-    
-
-
-
-
 </body>
 </html>

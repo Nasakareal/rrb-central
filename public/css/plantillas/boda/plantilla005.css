@@ -1,0 +1,528 @@
+body {
+    background-color: #FFDCDC;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    background-color: #f8f9fa; /* por ejemplo */
+}
+
+
+/* 1) HERO */
+.hero {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+}
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+.frase-boda {
+    position: absolute;
+    top: 22%; /* antes estaba en 15% */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    background: transparent;
+    color: #b8860b; /* dorado oscuro */
+}
+
+    .frase-boda .titulo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #b8860b;
+        margin-bottom: 2.5rem; /* más espacio hacia los nombres */
+    }
+
+    .frase-boda .nombres {
+        font-family: 'Dancing Script', cursive;
+        font-size: 4rem;
+        font-weight: 400;
+        color: #000;
+        margin-top: 0;
+    }
+
+        .frase-boda .nombres .simbolo {
+            color: #b8860b; /* negro solo para la & */
+        }
+
+
+
+@media (max-width: 600px) {
+    .frase-boda .titulo {
+        font-size: 1.5rem;
+    }
+
+    .frase-boda .nombres {
+        font-size: 2.8rem;
+    }
+}
+
+/* 2) HISTORIA */
+.historia-section.fondo-fijo {
+    background-image: url('../images/plantillas/boda/plantilla001/hero.jpg'); /* o usa asset() inline en el blade */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 200px; /* espacio entre bloques */
+}
+
+.texto-historia {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    max-width: 300px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+    /* Encabezado */
+    .texto-historia h3 {
+        font-weight: normal;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Párrafo */
+    .texto-historia p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Posiciones reales */
+    .texto-historia.izquierda {
+        align-self: flex-start;
+        margin-left: 5%;
+    }
+
+    .texto-historia.derecha {
+        align-self: flex-end;
+        margin-right: 5%;
+    }
+
+    .texto-historia.centrado {
+        margin: 0 auto;
+    }
+
+
+/* 2) RECUERDO */
+.memory {
+    padding: 4rem 1rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+    .memory h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #258d6a;
+    }
+
+    .memory p {
+        font-size: 1.25rem;
+        color: #333;
+        max-width: 700px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+/* 3) TARJETA BLANCA */
+.info-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    /* Quitar background: #ffffff; */
+}
+
+
+    .info-card h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+
+    .info-card .couple {
+        font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #555;
+    }
+
+    .info-card hr {
+        border-color: #ccc;
+        margin: 2rem 0;
+    }
+
+.padrino-group {
+    margin-bottom: 2rem;
+}
+
+    .padrino-group h5 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: .5rem;
+        color: #333;
+    }
+
+    .padrino-group p {
+        font-family: 'Great Vibes', cursive;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: .5rem 0;
+        position: relative;
+    }
+
+        .padrino-group p + p::before {
+            content: "—";
+            position: absolute;
+            left: 50%;
+            top: -1rem;
+            transform: translateX(-50%);
+            color: #ccc;
+        }
+
+.invite-text {
+    text-align: center;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+
+/* LÍNEA VERTICAL */
+.vertical-line {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 2px;
+    height: calc(100% - 50px);
+    background-color: #c5a900;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+
+.wedding-date {
+    background-color: #ffffff; /* Tarjeta blanca */
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+    .wedding-date h2 {
+        color: #4b4f6b;
+        font-weight: bold;
+    }
+
+    .wedding-date #countdown .text-center {
+        min-width: 70px;
+    }
+
+    .wedding-date #countdown .fs-1 {
+        font-size: 2.5rem;
+        color: #c5a900;
+    }
+
+
+.location-section {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+    .location-section h2 {
+        color: #4b4f6b;
+    }
+
+    .location-section h3 {
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .location-section p {
+        color: #444;
+        margin-bottom: 1rem;
+    }
+
+    .location-section a.btn {
+        border-color: #c5a900;
+        color: #000;
+        transition: all 0.3s ease;
+    }
+
+        .location-section a.btn:hover {
+            background-color: #c5a900;
+            color: #fff;
+            text-decoration: none;
+        }
+
+.itinerary-section {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-v1 .icon {
+    border: 2px solid #c5a900;
+    background-color: #c5a900 !important;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-v1 .vertical-line {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 4px;
+    height: calc(100% - 50px);
+    background-color: #c5a900;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.itinerary-section h2 {
+    font-weight: bold;
+    color: #4b4f6b;
+}
+
+.text-warning-emphasis {
+    color: #258d6a !important;
+}
+
+
+.dresscode-section {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+    .dresscode-section h2 {
+        font-weight: bold;
+        color: #4b4f6b;
+    }
+
+    .dresscode-section h3 {
+        color: #c5a900;
+    }
+
+    .dresscode-section .border-warning {
+        border-color: #c5a900 !important;
+    }
+
+.text-warning-emphasis {
+    color: #c5a900 !important;
+}
+
+
+.gift-section {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+    .gift-section h2 {
+        font-weight: bold;
+        color: #4b4f6b;
+        font-size: 2rem;
+    }
+
+    .gift-section p {
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 1.7;
+    }
+
+
+.gallery-section {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+    .gallery-section h2 {
+        font-weight: bold;
+        color: #4b4f6b;
+        font-size: 2rem;
+    }
+
+.carousel-inner img {
+    border-radius: 1rem;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.img-thumbnail {
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+    .img-thumbnail:hover {
+        border-color: #c5a900;
+    }
+
+
+
+
+
+
+
+.photo-upload-section {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+    .photo-upload-section h2 {
+        font-weight: bold;
+        color: #4b4f6b;
+        font-size: 2rem;
+    }
+
+    .photo-upload-section p {
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 1.7;
+    }
+
+    .photo-upload-section a.btn {
+        border-color: #c5a900;
+        color: #000;
+        transition: all 0.3s ease;
+    }
+
+        .photo-upload-section a.btn:hover {
+            background-color: #c5a900;
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+
+
+.confirm-section {
+    background-color: #ffffff;
+    max-width: 850px;
+    margin: 2rem auto;
+    padding: 2rem 2rem 3rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+    .confirm-section h2 {
+        color: #4b4f6b;
+        font-weight: bold;
+    }
+
+    .confirm-section p {
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 1.7;
+    }
+
+    .confirm-section .form-label {
+        font-weight: 500;
+        color: #333;
+    }
+
+    .confirm-section .form-control,
+    .confirm-section .form-select {
+        border-radius: .5rem;
+    }
+
+    .confirm-section .btn-outline-warning {
+        border-color: #c5a900;
+        color: #000;
+        transition: all 0.3s ease;
+    }
+
+        .confirm-section .btn-outline-warning:hover {
+            background-color: #c5a900;
+            color: #fff;
+        }
+
+    .confirm-section .btn-success i {
+        margin-right: 5px;
+    }
+
+.petalo {
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #ff80dc;
+    border-radius: 100% 0 100% 100%;
+    transform: rotate(45deg);
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 9999;
+    animation: caer 6s linear infinite;
+    clip-path: path("M60,60 C30,70 0,30 20,0 Q60,0 60,60 Z");
+}
+
+
+@keyframes caer {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(15px) translateY(50vh) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(-15px) translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.vertical-line {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 2px;
+    height: calc(100% - 50px);
+    background-color: #c5a900;
+    transform: translateX(-50%);
+    z-index: 1;
+}
