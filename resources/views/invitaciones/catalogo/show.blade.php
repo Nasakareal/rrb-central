@@ -51,7 +51,8 @@
                     $defaultPath = "images/catalogo/default.png";
                 @endphp
 
-                <img src="{{ asset($previewPath) }}" onerror="this.onerror=null;this.src='{{ asset($defaultPath) }}';">
+                <img src="/images/catalogo/{{ $categoria }}/{{ $plantilla['nombre_archivo'] }}.png" onerror="this.onerror=null;this.src='/images/catalogo/default.png';">
+
 
 
               <div class="card-body">
