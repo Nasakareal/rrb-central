@@ -4,12 +4,13 @@
     "\\public",
     "\\public\\css",
     "\\public\\css\\plantillas",
-    "\\public\\css\\plantillas\\graduacion",
+    "\\public\\css\\plantillas\\boda",
     "\\public\\css\\plantillas\\xv",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\plantillas",
-    "\\resources\\views\\plantillas\\graduacion"
+    "\\resources\\views\\plantillas\\boda"
   ],
+  "SelectedNode": "\\resources\\views\\plantillas\\boda\\plantilla001.blade.php",
   "PreviewInSolutionExplorer": false
 }

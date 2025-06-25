@@ -45,16 +45,14 @@
         @forelse ($plantillas as $plantilla)
           <div class="col-lg-3 col-md-4 col-sm-6 animate__animated animate__fadeInUp">
             <div class="card card-hover h-100 text-center">
-              @php
-                $previewFile = $plantilla['nombre_archivo'] . '.png';
-                $previewPath = "images/catalogo/$categoria/$previewFile";
-                $defaultPath = "images/catalogo/default.png";
-              @endphp
+                @php
+                    $previewFile = $plantilla['nombre_archivo'] . '.png';
+                    $previewPath = "images/catalogo/$categoria/$previewFile";
+                    $defaultPath = "images/catalogo/default.png";
+                @endphp
 
-              <img
-                src="{{ asset(file_exists(public_path($previewPath)) ? $previewPath : $defaultPath) }}"
-                class="img-fluid img-preview mx-auto mt-3"
-                alt="Vista previa de {{ $plantilla['nombre'] }}">
+                <img src="{{ asset($previewPath) }}" onerror="this.onerror=null;this.src='{{ asset($defaultPath) }}';">
+
 
               <div class="card-body">
                 <h5 class="card-title">{{ $plantilla['nombre'] }}</h5>

@@ -1,5 +1,5 @@
 body {
-    background-color: #cdeae1;
+    background-color: #FFDCDC;
     font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
@@ -19,20 +19,96 @@ section {
 
     .hero img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
         display: block;
     }
 
-    .hero::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 20px; /* Más alto para una transición más gradual */
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #ffffff 90%);
-        pointer-events: none;
+.frase-boda {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    right: 5%;
+    padding: 2rem;
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    background: transparent;
+    color: #000;
+}
+
+    .frase-boda .titulo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+        .frase-boda .titulo span {
+            margin-right: 1rem;
+        }
+
+    .frase-boda .linea {
+        flex-grow: 1;
+        height: 2px;
+        background-color: black;
+    }
+
+    .frase-boda .nombres {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2.8rem;
+        font-weight: 400;
+    }
+
+/* 2) HISTORIA */
+.historia-section.fondo-fijo {
+    background-image: url('../images/plantillas/boda/plantilla001/hero.jpg'); /* o usa asset() inline en el blade */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 200px; /* espacio entre bloques */
+}
+
+.texto-historia {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    max-width: 300px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+    /* Encabezado */
+    .texto-historia h3 {
+        font-weight: normal;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Párrafo */
+    .texto-historia p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Posiciones reales */
+    .texto-historia.izquierda {
+        align-self: flex-start;
+        margin-left: 5%;
+    }
+
+    .texto-historia.derecha {
+        align-self: flex-end;
+        margin-right: 5%;
+    }
+
+    .texto-historia.centrado {
+        margin: 0 auto;
     }
 
 
@@ -62,11 +138,12 @@ section {
 .info-card {
     max-width: 800px;
     margin: 2rem auto;
-    background: #ffffff;
     padding: 2rem;
     border-radius: .5rem;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    /* Quitar background: #ffffff; */
 }
+
 
     .info-card h2 {
         font-family: 'Great Vibes', cursive;
@@ -131,7 +208,7 @@ section {
     left: 50%;
     width: 2px;
     height: calc(100% - 50px);
-    background-color: #258d6a;
+    background-color: #c5a900;
     transform: translateX(-50%);
     z-index: 1;
 }
@@ -157,7 +234,7 @@ section {
 
     .wedding-date #countdown .fs-1 {
         font-size: 2.5rem;
-        color: #258d6a;
+        color: #c5a900;
     }
 
 
@@ -185,13 +262,13 @@ section {
     }
 
     .location-section a.btn {
-        border-color: #258d6a;
+        border-color: #c5a900;
         color: #000;
         transition: all 0.3s ease;
     }
 
         .location-section a.btn:hover {
-            background-color: #258d6a;
+            background-color: #c5a900;
             color: #fff;
             text-decoration: none;
         }
@@ -206,8 +283,8 @@ section {
 }
 
 .timeline-v1 .icon {
-    border: 2px solid #258d6a;
-    background-color: #258d6a !important;
+    border: 2px solid #c5a900;
+    background-color: #c5a900 !important;
     color: white;
     font-size: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -219,7 +296,7 @@ section {
     left: 50%;
     width: 4px;
     height: calc(100% - 50px);
-    background-color: #258d6a;
+    background-color: #c5a900;
     transform: translateX(-50%);
     z-index: 1;
     border-radius: 2px;
@@ -250,15 +327,15 @@ section {
     }
 
     .dresscode-section h3 {
-        color: #258d6a;
+        color: #c5a900;
     }
 
     .dresscode-section .border-warning {
-        border-color: #258d6a !important;
+        border-color: #c5a900 !important;
     }
 
 .text-warning-emphasis {
-    color: #258d6a !important;
+    color: #c5a900 !important;
 }
 
 
@@ -342,13 +419,13 @@ section {
     }
 
     .photo-upload-section a.btn {
-        border-color: #258d6a;
+        border-color: #c5a900;
         color: #000;
         transition: all 0.3s ease;
     }
 
         .photo-upload-section a.btn:hover {
-            background-color: #258d6a;
+            background-color: #c5a900;
             color: #fff;
             text-decoration: none;
         }
@@ -387,13 +464,13 @@ section {
     }
 
     .confirm-section .btn-outline-warning {
-        border-color: #258d6a;
+        border-color: #c5a900;
         color: #000;
         transition: all 0.3s ease;
     }
 
         .confirm-section .btn-outline-warning:hover {
-            background-color: #258d6a;
+            background-color: #c5a900;
             color: #fff;
         }
 
@@ -404,16 +481,19 @@ section {
 .petalo {
     position: fixed;
     top: -50px;
-    width: 35px;
-    height: 22px;
-    background: radial-gradient(circle at 50% 40%, #d80027, #a0001d);
-    border-radius: 50% 70% 50% 50% / 60% 80% 40% 40%;
-    transform: rotate(-20deg) skewX(-10deg);
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #ff80dc;
+    border-radius: 100% 0 100% 100%;
+    transform: rotate(45deg);
     opacity: 0.85;
     pointer-events: none;
     z-index: 9999;
-    animation: caer linear infinite;
+    animation: caer 6s linear infinite;
+    clip-path: path("M60,60 C30,70 0,30 20,0 Q60,0 60,60 Z");
 }
+
 
 @keyframes caer {
     0% {
