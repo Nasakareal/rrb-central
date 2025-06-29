@@ -1,16 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
     "\\database",
-    "\\database\\migrations",
+    "\\database\\seeders",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\invitaciones",
     "\\resources\\views\\invitaciones\\Camila"
   ],
-  "SelectedNode": "\\database\\migrations\\2025_06_29_035355_change_boletos_column_in_confirmaciones_table.php",
+  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\show.blade.php",
   "PreviewInSolutionExplorer": false
 }

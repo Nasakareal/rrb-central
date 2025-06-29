@@ -373,7 +373,7 @@
         <p class="mb-5" style="max-width: 700px; margin: auto;">
           Nos gustaría que pudieras asistir y compartir con nosotros este día tan especial.  
           Te rogamos confirmar tu asistencia antes del  
-          <strong style="color: #258d6a;">30 de JUNIO del 2025</strong>.
+          <strong style="color: #258d6a;">10 de JULIO del 2025</strong>.
         </p>
 
         @if($invitacion)
