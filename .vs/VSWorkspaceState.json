@@ -1,13 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\database",
-    "\\database\\seeders",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\plantillas",
+    "\\public\\css\\plantillas\\boda",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\Camila"
+    "\\resources\\views\\plantillas",
+    "\\resources\\views\\plantillas\\boda"
   ],
-  "SelectedNode": "\\database\\seeders\\InvitadosConInvitacionesSeeder.php",
+  "SelectedNode": "\\public\\css\\plantillas\\boda\\plantilla005.css",
   "PreviewInSolutionExplorer": false
 }

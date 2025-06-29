@@ -19,23 +19,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="{{ asset('css/plantillas/boda/plantilla006.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/plantillas/boda/plantilla007.css') }}?v={{ time() }}">
 
 
 </head>
-<body style="
-    background-image: url('{{ asset('images/plantillas/boda/plantilla006/fondito.png') }}') !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-color: transparent !important;
-    margin: 0;
-    padding: 0;
-    font-family: 'Playfair Display', serif;
-">
-
-
-
+<body>
     <audio id="bg-audio" autoplay loop>
         <source src="{{ asset('images/plantillas/boda/plantilla005/cancion.mp3') }}" type="audio/mpeg">
         Tu navegador no soporta audio HTML5.
@@ -43,15 +31,15 @@
 
     <!-- 1) HERO DE LA BODA -->
     <section class="hero">
-        <img src="{{ asset('images/plantillas/boda/plantilla006/fondito.png') }}" alt="Fondo decorativo">
+        <img src="{{ asset('images/plantillas/boda/plantilla007/fondo.png') }}" alt="Fondo decorativo">
 
         <div class="frase-boda">
             <div class="titulo">¡NOS CASAMOS!</div>
 
             <div class="nombres-vertical">
-                <div class="nombre">Rosa</div>
-                <div class="simbolo">&</div>
-                <div class="nombre">Alexei</div>
+                <div class="nombre">Vania</div>
+                <div class="simbolo" style="color: #7c6f4f;">&</div>
+                <div class="nombre">Mario</div>
             </div>
         </div>
     </section>
@@ -102,7 +90,7 @@
     </section>
 
     <!-- 3) RECUERDO -->
-    <section class="info-card animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fondito.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="info-card animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondor1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
     <div class="container">
         <h2>Nuestros Votos</h2>
 
@@ -133,17 +121,17 @@
     </section>
 
     <!-- 3) TARJETA BLANCA CON INFO Y PADRINOS -->
-    <section class="info-card" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fonditor.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="info-card" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondol1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
 
         <div style="text-align:center; margin: 2rem 0;">
-          <img src="{{ asset('images/plantillas/boda/plantilla006/ornamental.png') }}" alt="Divisor decorativo" style="width: 150px;">
+          <img src="{{ asset('images/plantillas/boda/plantilla007/ornamental.png') }}" alt="Divisor decorativo" style="width: 150px;">
         </div>
 
         <h2>Padres del Nobio</h2>
         <p class="couple">Luis Gutierrez Zambrano &amp; Olga Orduño</p>
 
         <div style="text-align:center; margin: 2rem 0;">
-          <img src="{{ asset('images/plantillas/boda/plantilla004/cross.png') }}" alt="Divisor decorativo" style="width: 150px;">
+          <img src="{{ asset('images/plantillas/boda/plantilla007/rose.png') }}" alt="Divisor decorativo" style="width: 150px;">
         </div>
 
         <hr>
@@ -164,7 +152,7 @@
         <hr>
 
         <div style="text-align:center; margin: 2rem 0;">
-          <img src="{{ asset('images/plantillas/boda/plantilla004/altar.png') }}" alt="Divisor decorativo" style="width: 150px;">
+          <img src="{{ asset('images/plantillas/boda/plantilla007/altar.png') }}" alt="Divisor decorativo" style="width: 150px;">
         </div>
 
         <p class="invite-text">
@@ -174,35 +162,35 @@
     </section>
 
     <!-- 4) FECHA -->
-    <section class="wedding-date text-center py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fondito.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="wedding-date text-center py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondor1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
         <div style="text-align:center; margin: 2rem 0;">
-            <img src="{{ asset('images/plantillas/boda/plantilla006/calendargold.png') }}" alt="Divisor decorativo" style="width: 150px;">
+            <img src="{{ asset('images/plantillas/boda/plantilla004/calendar.png') }}" alt="Divisor decorativo" style="width: 150px;">
         </div>
 
         <div class="container">
             <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2rem;">¿CUÁNDO?</h2>
-            <hr class="mx-auto mb-4" style="width: 200px; border-top: 2px solid #c5a900;">
+            <hr class="mx-auto mb-4" style="width: 200px; border-top: 2px solid #c5b58c;">
 
-            <div class="mb-4" style="color: white;">
+            <div class="mb-4" style="color: #c5b58c;">
                 <span style="font-size: 1.5rem; font-family: 'Great Vibes', cursive;">Julio</span>
-                <span style="font-size: 5rem; font-weight: bold; color: #c5a900;">07</span>
+                <span style="font-size: 5rem; font-weight: bold; color: #c5b58c;">07</span>
                 <span style="font-size: 1.5rem;">2029</span>
             </div>
 
            <div class="d-flex justify-content-center gap-4 flex-wrap" id="countdown">
-                <div class="text-center" style="color: white;">
+                <div class="text-center" style="color: #c5b58c;">
                     <div class="fs-1 fw-bold" id="days">00</div>
                     <div style="font-family: 'Playfair Display', serif;">Días</div>
                 </div>
-                <div class="text-center" style="color: white;">
+                <div class="text-center" style="color: #c5b58c;">
                     <div class="fs-1 fw-bold" id="hours">00</div>
                     <div style="font-family: 'Playfair Display', serif;">Horas</div>
                 </div>
-                <div class="text-center" style="color: white;">
+                <div class="text-center" style="color: #c5b58c;">
                     <div class="fs-1 fw-bold" id="minutes">00</div>
                     <div style="font-family: 'Playfair Display', serif;">Min.</div>
                 </div>
-                <div class="text-center" style="color: white;">
+                <div class="text-center" style="color: #c5b58c;">
                     <div class="fs-1 fw-bold" id="seconds">00</div>
                     <div style="font-family: 'Playfair Display', serif;">Seg.</div>
                 </div>
@@ -211,11 +199,11 @@
     </section>
 
     <!-- 5) LUGAR -->
-    <section class="location-section text-center py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fonditor.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="location-section text-center py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondol1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
         <div class="container">
             <!-- Ícono de anillos -->
             <div style="text-align:center; margin: 2rem 0;">
-              <img src="{{ asset('images/plantillas/boda/plantilla006/church.png') }}" alt="Divisor decorativo" style="width: 150px;">
+              <img src="{{ asset('images/plantillas/boda/plantilla007/church.png') }}" alt="Divisor decorativo" style="width: 150px;">
             </div>
 
             <!-- Título -->
@@ -224,12 +212,12 @@
             </h2>
 
             <!-- Hora -->
-            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: white;">
+            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: #c5b58c;">
                 17:00 HRS
             </p>
 
             <!-- Lugar -->
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; color: #c5a900">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; color: #c5b58c">
                 Parroquía Divino Niño Jesús
             </h3>
 
@@ -249,7 +237,7 @@
 
             <!-- Botón -->
             <a href="https://maps.app.goo.gl/1fe7bNdXmnrozK6b8" target="_blank"
-               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #c5a900; color: #c5a900;">
+               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #c5a900; color: #c5b58c;">
                 <i class="bi bi-geo-alt-fill"></i> CÓMO LLEGAR
             </a>
 
@@ -260,16 +248,16 @@
 
             <!-- Título -->
             <h2 class="mt-3" style="font-family: 'Great Vibes', cursive; font-size: 2.5rem;">
-                Ceremonia <span style="color: #c5a900;">&</span> Recepción
+                Ceremonia <span style="color: #c5b58c;">&</span> Recepción
             </h2>
 
             <!-- Hora -->
-            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: #c5a900;">
+            <p class="mt-2 mb-1" style="font-size: 1.5rem; font-weight: bold; color: #c5b58c;">
                 18:30 HRS
             </p>
 
             <!-- Lugar -->
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; color: #c5a900">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; color: #c5b58c">
                 Quinta Antonelli
             </h3>
 
@@ -289,14 +277,14 @@
 
             <!-- Botón -->
             <a href="https://maps.app.goo.gl/YDD6DNiMRQ8BmUtj9" target="_blank"
-               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #c5a900; color: #c5a900;">
+               class="btn btn-outline-dark px-4 py-2 mt-2" style="border-color: #c5a900; color: #c5b58c;">
                 <i class="bi bi-geo-alt-fill"></i> CÓMO LLEGAR
             </a>
         </div>
     </section>
 
     <!-- 5) ITINERARIO -->
-    <section class="itinerary-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fondito.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="itinerary-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondor1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
 
         <div class="container">
             <h2 class="text-center mb-5" style="font-family: 'Playfair Display', serif; letter-spacing: 2px;">
@@ -356,7 +344,7 @@
     </section>
 
     <!-- 6) VESTIMENTA -->
-    <section class="dresscode-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fonditor.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="dresscode-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondol1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
 
         <div style="text-align:center; margin: 2rem 0;">
             <img src="{{ asset('images/plantillas/xv/plantilla001/wedding.png') }}" alt="Divisor decorativo" style="width: 150px;">
@@ -374,7 +362,7 @@
 
                 <!-- MUJERES -->
                 <div class="col-md-5 mb-4">
-                    <div class="p-4 border rounded-4 border-warning" style="color: white;">
+                    <div class="p-4 border rounded-4 border-warning" style="color: #c5b58c;">
                         <h5 class="text-uppercase text-warning-emphasis mb-3">Mujeres</h5>
                         <p style="font-size: 1rem;">
                             <strong class="text-danger">Evitar:</strong> Blanco y rosa.
@@ -384,7 +372,7 @@
 
                 <!-- HOMBRES -->
                 <div class="col-md-5 mb-4">
-                    <div class="p-4 border rounded-4 border-warning" style="color: white;">
+                    <div class="p-4 border rounded-4 border-warning" style="color: #c5b58c;">
                         <h5 class="text-uppercase text-warning-emphasis mb-3">Hombres</h5>
                         <p style="font-size: 1rem;">
                             <strong class="text-danger">Evitar:</strong> negro y café.
@@ -396,7 +384,7 @@
     </section>
 
     <!-- 7) MESA DE REGALOS -->
-    <section class="gift-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fondito.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="gift-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondor1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
 
         <div style="text-align:center; margin: 2rem 0;">
             <img src="{{ asset('images/plantillas/xv/plantilla001/money.png') }}" alt="Divisor decorativo" style="width: 150px;">
@@ -414,7 +402,7 @@
     </section>
 
     <!-- 8) FOTOS -->
-    <section class="gallery-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fonditor.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="gallery-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondol1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
         <div class="container text-center">
             <h2 class="mb-4" style="font-family: 'Playfair Display', serif; letter-spacing: 2px;">
                 NUESTROS MOMENTOS
@@ -455,7 +443,7 @@
     </section>
 
     <!-- 7.5) GALERÍA DE FOTOS DE INVITADOS -->
-    <section class="photo-upload-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fondito.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="photo-upload-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondor1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
         <div class="container text-center">
             <div style="text-align:center; margin: 2rem 0;">
                 <img src="{{ asset('images/plantillas/xv/plantilla001/photographer.png') }}" alt="Divisor decorativo" style="width: 150px;">
@@ -477,7 +465,7 @@
 
     
     <!-- DEMO DE INVITACIÓN SIN LÓGICA -->
-    <section class="confirm-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla006/fonditor.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
+    <section class="confirm-section py-5 animate__animated animate__fadeInUp" style="background-image: url('{{ asset('images/plantillas/boda/plantilla007/fondol1.png') }}'); background-size: 600px 600px; background-repeat: repeat; background-color: transparent;">
       <div class="container text-center">
         <h2 class="mb-3" style="font-family: 'Playfair Display', serif; font-size: 2rem;">
           CONFIRMAR ASISTENCIA
