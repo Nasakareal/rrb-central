@@ -8,6 +8,6 @@
     "\\resources\\views\\invitaciones",
     "\\resources\\views\\invitaciones\\Camila"
   ],
-  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\show.blade.php",
+  "SelectedNode": "\\database\\seeders\\InvitadosConInvitacionesSeeder.php",
   "PreviewInSolutionExplorer": false
 }
