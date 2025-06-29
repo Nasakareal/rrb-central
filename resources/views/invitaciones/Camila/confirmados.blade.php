@@ -36,7 +36,14 @@
             <td>{{ $c->telefono }}</td>
             <td>{{ $c->email }}</td>
             <td class="text-center">{{ $c->asistencia }}</td>
-            <td class="text-center">{{ $c->boletos ?? 'No respondió' }}</td>
+            <td class="text-center">
+                @if (is_numeric($c->boletos))
+                {{ $c->boletos }} boleto{{ $c->boletos == 1 ? '' : 's' }}
+                @else
+                No respondió
+                @endif
+            </td>
+
             <td>{{ $c->mensaje ?? '-' }}</td>
             <td>{{ $c->created_at->format('d/m/Y H:i') }}</td>
           </tr>

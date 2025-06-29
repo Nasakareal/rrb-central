@@ -46,24 +46,24 @@ class InvitacionRealController extends Controller
 
     public function confirmar(Request $request, $id)
     {
+        $invitacion = Invitacion::findOrFail($id);
+
         $request->validate([
             'telefono'   => 'required|string|max:20',
             'email'      => 'required|email|max:255',
             'asistencia' => 'required|in:Sí,No',
-            'boletos'    => 'nullable|in:Sí,No',
+            'boletos'    => 'required|integer|min:0|max:' . $invitacion->num_pases_confirmados,
             'mensaje'    => 'nullable|string',
         ]);
 
-        $invitacion = Invitacion::findOrFail($id);
         $invitacion->asistencia_confirmada = true;
 
         if (!$invitacion->qr_token) {
-            $invitacion->qr_token = Str::uuid();
+            $invitacion->qr_token = \Illuminate\Support\Str::uuid();
         }
 
         $invitacion->save();
 
-        // Insertar también en la tabla confirmaciones
         \App\Models\Confirmacion::create([
             'evento_id' => $invitacion->evento_id,
             'nombre'    => $invitacion->user->name,
@@ -76,7 +76,6 @@ class InvitacionRealController extends Controller
 
         return redirect()->route('camila.invitacion')->with('success', '¡Asistencia confirmada!');
     }
-
 
     public function logout()
     {

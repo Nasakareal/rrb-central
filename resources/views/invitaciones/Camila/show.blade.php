@@ -425,10 +425,12 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label for="boletos" class="form-label">¿Usarás todos tus boletos asignados?</label>
-                  <select class="form-select" id="boletos" name="boletos">
-                    <option value="Sí">Sí</option>
-                    <option value="No">No</option>
+                  <label for="boletos" class="form-label">¿Cuántos boletos usarás?</label>
+                  <select class="form-select" id="boletos" name="boletos" required>
+                    <option value="">-- Selecciona --</option>
+                    @for ($i = 0; $i <= ($invitacion->num_pases_confirmados ?? 0); $i++)
+                      <option value="{{ $i }}">{{ $i }} boleto{{ $i == 1 ? '' : 's' }}</option>
+                    @endfor
                   </select>
                 </div>
 

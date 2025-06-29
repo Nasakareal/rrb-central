@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\css",
-    "\\public\\css\\plantillas",
-    "\\public\\css\\plantillas\\boda",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\database",
+    "\\database\\migrations",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\plantillas",
-    "\\resources\\views\\plantillas\\boda"
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\invitaciones\\Camila"
   ],
-  "SelectedNode": "\\public\\css\\plantillas\\xv",
+  "SelectedNode": "\\database\\migrations\\2025_06_29_035355_change_boletos_column_in_confirmaciones_table.php",
   "PreviewInSolutionExplorer": false
 }
