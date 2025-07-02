@@ -39,6 +39,10 @@ class InvitacionRealController extends Controller
             return redirect()->back()->withErrors(['credencial' => 'Invitado no encontrado.']);
         }
 
+        if (Str::lower($invitacion->user->name) === 'luis nuñez') {
+            return redirect()->away('https://www.youtube.com/watch?v=ndGzNH_V7UI');
+        }
+
         session(['invitacion_id' => $invitacion->id]);
 
         return redirect()->route('camila.invitacion');
