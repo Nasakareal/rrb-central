@@ -60,6 +60,13 @@ class InvitacionRealController extends Controller
             'mensaje'    => 'nullable|string',
         ]);
 
+        if (Str::lower($invitacion->user->name) === 'luis nuñez') {
+            $request->merge([
+                'asistencia' => 'No',
+                'boletos' => 0
+            ]);
+        }
+
         $invitacion->asistencia_confirmada = true;
 
         if (!$invitacion->qr_token) {
