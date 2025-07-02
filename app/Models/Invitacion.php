@@ -24,4 +24,15 @@ class Invitacion extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
+    public function confirmaciones()
+    {
+        return $this->hasMany(\App\Models\Confirmacion::class);
+    }
+
+    public function ultimaConfirmacion()
+{
+    return $this->hasOne(\App\Models\Confirmacion::class, 'nombre', 'user.name')->latestOfMany();
+}
+
 }

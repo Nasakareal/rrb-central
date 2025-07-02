@@ -378,7 +378,8 @@
 
         @if($invitacion)
 
-          @if($invitacion->asistencia_confirmada && $invitacion->ultimaConfirmacion?->asistencia === 'Sí')
+          @if($invitacion->asistencia_confirmada && $ultimaConfirmacion && $ultimaConfirmacion->asistencia === 'Sí')
+
             <div class="alert alert-success">
               <strong>✅ Asistencia confirmada.</strong><br>
               Presenta este código QR en la entrada:

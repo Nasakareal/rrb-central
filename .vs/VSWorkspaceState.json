@@ -4,11 +4,12 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
+    "\\app\\Models",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\invitaciones",
     "\\resources\\views\\invitaciones\\Camila"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\InvitacionRealController.php",
+  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\show.blade.php",
   "PreviewInSolutionExplorer": false
 }

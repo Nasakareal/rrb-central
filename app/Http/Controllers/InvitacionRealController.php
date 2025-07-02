@@ -11,16 +11,23 @@ use Illuminate\Support\Str;
 class InvitacionRealController extends Controller
 {
     public function show()
-    {
-        $evento = Evento::where('codigo_unico', 'camila')->firstOrFail();
-        $invitacion = null;
+{
+    $evento = Evento::where('codigo_unico', 'camila')->firstOrFail();
+    $invitacion = null;
+    $ultimaConfirmacion = null;
 
-        if (Session::has('invitacion_id')) {
-            $invitacion = Invitacion::with('user')->find(Session::get('invitacion_id'));
-        }
+    if (Session::has('invitacion_id')) {
+        $invitacion = Invitacion::with('user')->find(Session::get('invitacion_id'));
 
-        return view('invitaciones.Camila.show', compact('evento', 'invitacion'));
+        // Buscar última confirmación por nombre y evento
+        $ultimaConfirmacion = \App\Models\Confirmacion::where('nombre', $invitacion->user->name)
+            ->where('evento_id', $invitacion->evento_id)
+            ->orderByDesc('created_at')
+            ->first();
     }
+
+    return view('invitaciones.Camila.show', compact('evento', 'invitacion', 'ultimaConfirmacion'));
+}
 
     public function login(Request $request)
     {
