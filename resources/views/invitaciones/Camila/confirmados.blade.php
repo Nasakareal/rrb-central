@@ -21,20 +21,15 @@
       <thead class="table-warning text-center">
         <tr>
           <th>Nombre</th>
-          <th>Teléfono</th>
-          <th>Email</th>
           <th>Asistencia</th>
           <th>Boletos</th>
           <th>Mensaje</th>
-          <th>Fecha</th>
         </tr>
       </thead>
       <tbody>
         @forelse($confirmaciones as $c)
           <tr>
             <td>{{ $c->nombre }}</td>
-            <td>{{ $c->telefono }}</td>
-            <td>{{ $c->email }}</td>
             <td class="text-center">{{ $c->asistencia }}</td>
             <td class="text-center">
                 @if (is_numeric($c->boletos))
@@ -45,7 +40,6 @@
             </td>
 
             <td>{{ $c->mensaje ?? '-' }}</td>
-            <td>{{ $c->created_at->format('d/m/Y H:i') }}</td>
           </tr>
         @empty
           <tr>
