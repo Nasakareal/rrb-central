@@ -10,12 +10,12 @@
 <body class="bg-light p-4">
   <div class="container">
     <h1 class="mb-4">
-      🎉 Lista de confirmaciones - Camila ({{ $confirmaciones->where('asistencia', 'Sí')->count() }} asistentes confirmados)
+      🎉 Lista de confirmaciones - Camila ({{ $confirmaciones->where('asistencia', 'Sí')->reject(fn($c) => in_array($c->nombre, ['Mario Bautista', 'Lucas Aviles']))->count() }} asistentes confirmados)
     </h1>
     <div class="mb-4">
-      <p class="mb-1"><strong>Total de confirmados:</strong> {{ $confirmaciones->where('asistencia', 'Sí')->count() }}</p>
-      <p class="mb-1"><strong>No asistirán:</strong> {{ $confirmaciones->where('asistencia', 'No')->count() }}</p>
-      <p class="mb-1"><strong>Registros totales:</strong> {{ $confirmaciones->count() }}</p>
+      <p class="mb-1"><strong>Total de confirmados:</strong> {{ $confirmaciones->where('asistencia', 'Sí')->reject(fn($c) => in_array($c->nombre, ['Mario Bautista', 'Lucas Aviles']))->count() }}</p>
+      <p class="mb-1"><strong>No asistirán:</strong> {{ $confirmaciones->where('asistencia', 'No')->reject(fn($c) => in_array($c->nombre, ['Mario Bautista', 'Lucas Aviles']))->count() }}</p>
+      <p class="mb-1"><strong>Registros totales:</strong> {{ $confirmaciones->reject(fn($c) => in_array($c->nombre, ['Mario Bautista', 'Lucas Aviles']))->count() }}</p>
     </div>
     <table class="table table-bordered table-striped">
       <thead class="table-warning text-center">
@@ -27,18 +27,21 @@
         </tr>
       </thead>
       <tbody>
-        @forelse($confirmaciones as $c)
+        @php
+            $filtradas = $confirmaciones->reject(fn($c) => in_array($c->nombre, ['Mario Bautista', 'Lucas Aviles']));
+        @endphp
+
+        @forelse($filtradas as $c)
           <tr>
             <td>{{ $c->nombre }}</td>
             <td class="text-center">{{ $c->asistencia }}</td>
             <td class="text-center">
                 @if (is_numeric($c->boletos))
-                {{ $c->boletos }} boleto{{ $c->boletos == 1 ? '' : 's' }}
+                    {{ $c->boletos }} boleto{{ $c->boletos == 1 ? '' : 's' }}
                 @else
-                No respondió
+                    No respondió
                 @endif
             </td>
-
             <td>{{ $c->mensaje ?? '-' }}</td>
           </tr>
         @empty

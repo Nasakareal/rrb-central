@@ -3,8 +3,12 @@
     "",
     "\\app",
     "\\app\\Http",
-    "\\app\\Http\\Controllers"
+    "\\app\\Http\\Controllers",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\invitaciones\\Camila"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\ConfirmacionController.php",
+  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\confirmados.blade.php",
   "PreviewInSolutionExplorer": false
 }
