@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\resources",
-    "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\Camila"
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers"
   ],
-  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\confirmados.blade.php",
+  "SelectedNode": "\\app\\Http\\Controllers\\ConfirmacionController.php",
   "PreviewInSolutionExplorer": false
 }

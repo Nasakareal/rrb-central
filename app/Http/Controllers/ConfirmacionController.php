@@ -9,7 +9,9 @@ class ConfirmacionController extends Controller
 {
     public function index()
     {
-        $confirmaciones = Confirmacion::latest()->get();
+        $confirmaciones = Confirmacion::whereNotIn('nombre', ['Mario Bautista', 'Lucas Aviles'])
+                                       ->latest()
+                                       ->get();
 
         return view('confirmaciones.index', compact('confirmaciones'));
     }
