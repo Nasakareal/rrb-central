@@ -6,9 +6,9 @@
     "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\invitaciones\\Camila"
+    "\\resources\\views\\papeleria",
+    "\\resources\\views\\papeleria\\layouts"
   ],
-  "SelectedNode": "\\resources\\views\\invitaciones\\Camila\\confirmados.blade.php",
+  "SelectedNode": "\\resources\\views\\papeleria\\layouts\\app.blade.php",
   "PreviewInSolutionExplorer": false
 }
