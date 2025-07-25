@@ -12,6 +12,6 @@
     "\\resources\\views\\papeleria\\categorias",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\papeleria\\categorias\\show.blade.php",
+  "SelectedNode": "\\resources\\views\\papeleria\\index.blade.php",
   "PreviewInSolutionExplorer": false
 }

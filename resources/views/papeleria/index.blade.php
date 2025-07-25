@@ -1,4 +1,4 @@
-@extends('papeleria.layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Catálogo')
 
