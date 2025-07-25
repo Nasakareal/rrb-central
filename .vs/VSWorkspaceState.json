@@ -4,11 +4,14 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
+    "\\app\\Http\\Controllers\\Papeleria",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\layouts",
     "\\resources\\views\\papeleria",
-    "\\resources\\views\\papeleria\\layouts"
+    "\\resources\\views\\papeleria\\categorias",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\papeleria\\layouts\\app.blade.php",
+  "SelectedNode": "\\resources\\views\\papeleria\\categorias\\show.blade.php",
   "PreviewInSolutionExplorer": false
 }

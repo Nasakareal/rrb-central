@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/sistemas', [App\Http\Controllers\HomeController::class, 'systems'])->name('sistemas');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
@@ -60,17 +61,15 @@ Route::prefix('invitaciones')->middleware('auth')->group(function () {
 // Módulo Papelería “La Manzana”
 Route::prefix('la-manzana')->name('papeleria.')->group(function () {
     // 1) Página principal y catálogo (público)
-    Route::get('/',                                        [App\Http\Controllers\Papeleria\PapeleriaController::class, 'index'])->name('index');
-    Route::get('/categorias',                              [App\Http\Controllers\Papeleria\CategoriaController::class, 'index'])->name('categorias.index');
-    Route::get('/categorias/{categoria}',                  [App\Http\Controllers\Papeleria\CategoriaController::class, 'show'])->name('categorias.show');
-    Route::get('/productos',                               [App\Http\Controllers\Papeleria\ProductoController::class, 'index'])->name('productos.index');
-    Route::get('/productos/{producto}',                    [App\Http\Controllers\Papeleria\ProductoController::class, 'show'])->name('productos.show');
+    Route::get('/',                                [App\Http\Controllers\Papeleria\PapeleriaController::class, 'index'])->name('index');
+    Route::get('/categorias',                      [App\Http\Controllers\Papeleria\CategoriaController::class, 'index'])->name('categorias.index');
+    Route::get('/productos',                       [App\Http\Controllers\Papeleria\ProductoController::class, 'index'])->name('productos.index');
 
     // 2) Carrito de compras (cliente sin login)
-    Route::get('/carrito',                                 [App\Http\Controllers\Papeleria\CarritoController::class, 'index'])->name('carrito.index');
-    Route::post('/carrito/add/{producto}',                 [App\Http\Controllers\Papeleria\CarritoController::class, 'add'])->name('carrito.add');
-    Route::post('/carrito/remove/{producto}',              [App\Http\Controllers\Papeleria\CarritoController::class, 'remove'])->name('carrito.remove');
-    Route::post('/carrito/confirm',                        [App\Http\Controllers\Papeleria\CarritoController::class, 'confirm'])->name('carrito.confirm');
+    Route::get('/carrito',                         [App\Http\Controllers\Papeleria\CarritoController::class, 'index'])->name('carrito.index');
+    Route::post('/carrito/add/{producto}',         [App\Http\Controllers\Papeleria\CarritoController::class, 'add'])->name('carrito.add');
+    Route::post('/carrito/remove/{producto}',      [App\Http\Controllers\Papeleria\CarritoController::class, 'remove'])->name('carrito.remove');
+    Route::post('/carrito/confirm',                [App\Http\Controllers\Papeleria\CarritoController::class, 'confirm'])->name('carrito.confirm');
 
     // 3) Administración (requiere login)
     Route::middleware('auth')->group(function () {
@@ -88,4 +87,16 @@ Route::prefix('la-manzana')->name('papeleria.')->group(function () {
         Route::put('/productos/{producto}',               [App\Http\Controllers\Papeleria\ProductoController::class, 'update'])->name('productos.update');
         Route::delete('/productos/{producto}',            [App\Http\Controllers\Papeleria\ProductoController::class, 'destroy'])->name('productos.destroy');
     });
+
+    // 4) Mostrar categoría y producto individual (deben ir al final)
+    Route::get('/categorias/{categoria}',          [App\Http\Controllers\Papeleria\CategoriaController::class, 'show'])->name('categorias.show');
+    Route::get('/productos/{producto}',            [App\Http\Controllers\Papeleria\ProductoController::class, 'show'])->name('productos.show');
 });
+
+
+Route::middleware(['auth', 'role:Administrador'])->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+});
+
+
+require __DIR__.'/auth.php';
