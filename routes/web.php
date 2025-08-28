@@ -2,10 +2,57 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Rifas\RifaPublicController;
+use App\Http\Controllers\Rifas\RifaOperacionController;
+use App\Http\Controllers\Rifas\RifaAdminController;
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/sistemas', [App\Http\Controllers\HomeController::class, 'systems'])->name('sistemas');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+
+
+
+
+/* =========================
+|  RIFAS (PUBLICO)
+|=========================*/
+Route::prefix('rifas')->name('rifas.')->group(function () {
+    // Listado de rifas activas
+    Route::get('/', [RifaPublicController::class, 'index'])->name('index');
+    // Detalle de una rifa (números disponibles, info)
+    Route::get('/{rifa}', [RifaPublicController::class, 'show'])->name('show');
+
+    // Operaciones de compra (pueden requerir auth según tu política)
+    Route::post('/{rifa}/reservar', [RifaOperacionController::class, 'reservar'])->name('reservar');
+    Route::post('/{rifa}/cancelar-reserva', [RifaOperacionController::class, 'cancelarReserva'])->name('cancelar_reserva');
+    Route::post('/{rifa}/pagar', [RifaOperacionController::class, 'pagar'])->name('pagar');
+
+    // Boletos del usuario (requiere login)
+    Route::middleware('auth')->group(function () {
+        Route::get('/{rifa}/mis-boletos', [RifaPublicController::class, 'misBoletos'])->name('mis_boletos');
+    });
+});
+
+/* =========================
+|  Administración
+|=========================*/
+Route::middleware(['auth', 'role:Administrador'])->prefix('admin/rifas')->name('admin.rifas.')->group(function () {
+    Route::get('/',           [RifaAdminController::class, 'index'])->name('index');
+    Route::get('/create',     [RifaAdminController::class, 'create'])->name('create');
+    Route::post('/',          [RifaAdminController::class, 'store'])->name('store');
+    Route::get('/{rifa}/edit',[RifaAdminController::class, 'edit'])->name('edit');
+    Route::put('/{rifa}',     [RifaAdminController::class, 'update'])->name('update');
+    Route::delete('/{rifa}',  [RifaAdminController::class, 'destroy'])->name('destroy');
+
+    // Acciones especiales
+    Route::post('/{rifa}/generar-boletos', [RifaAdminController::class, 'generarBoletos'])->name('generar_boletos');
+    Route::post('/{rifa}/pausar',          [RifaAdminController::class, 'pausar'])->name('pausar');
+    Route::post('/{rifa}/cerrar',          [RifaAdminController::class, 'cerrar'])->name('cerrar');
+    Route::post('/{rifa}/sortear',         [RifaAdminController::class, 'sortear'])->name('sortear');
+});
+
+
 
 // Vista fija: /camila
 Route::get('/camila', [App\Http\Controllers\InvitacionRealController::class, 'show'])->name('camila.invitacion');

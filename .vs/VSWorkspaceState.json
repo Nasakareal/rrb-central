@@ -4,14 +4,15 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Http\\Controllers\\Papeleria",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\plantillas",
+    "\\public\\css\\plantillas\\convivios",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\layouts",
-    "\\resources\\views\\papeleria",
-    "\\resources\\views\\papeleria\\categorias",
-    "\\routes"
+    "\\resources\\views\\plantillas",
+    "\\resources\\views\\plantillas\\boda"
   ],
-  "SelectedNode": "\\resources\\views\\papeleria\\index.blade.php",
+  "SelectedNode": "\\resources\\views\\plantillas\\boda\\plantilla007.blade.php",
   "PreviewInSolutionExplorer": false
 }
