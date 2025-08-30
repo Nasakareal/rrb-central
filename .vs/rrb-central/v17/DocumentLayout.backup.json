@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\wamp64\\www\\rrb-central\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\show.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\rifas\\show.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\resources\\views\\plantillas\\convivios\\plantilla001.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\plantillas\\convivios\\plantilla001.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\mis-boletos.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\rifas\\mis-boletos.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\routes\\web.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:routes\\web.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\database\\seeders\\RifaValentinaSeeder.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\seeders\\RifaValentinaSeeder.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\index.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\rifas\\index.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaAdminController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\Rifas\\RifaAdminController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaOperacionController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\Rifas\\RifaOperacionController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaPublicController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\Rifas\\RifaPublicController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\CatalogoInvitacionesController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\CatalogoInvitacionesController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "web.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\routes\\web.php",
-              "RelativeDocumentMoniker": "routes\\web.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\routes\\web.php",
-              "RelativeToolTip": "routes\\web.php",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAkwJUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:29:13.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RifaValentinaSeeder.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\database\\seeders\\RifaValentinaSeeder.php",
-              "RelativeDocumentMoniker": "database\\seeders\\RifaValentinaSeeder.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\database\\seeders\\RifaValentinaSeeder.php",
-              "RelativeToolTip": "database\\seeders\\RifaValentinaSeeder.php",
-              "ViewState": "AgIAABQAAAAAAAAAAAAkwEcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:19:22.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "mis-boletos.blade.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\mis-boletos.blade.php",
-              "RelativeDocumentMoniker": "resources\\views\\rifas\\mis-boletos.blade.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\mis-boletos.blade.php",
-              "RelativeToolTip": "resources\\views\\rifas\\mis-boletos.blade.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "CatalogoInvitacionesController.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\CatalogoInvitacionesController.php",
+              "RelativeDocumentMoniker": "app\\Http\\Controllers\\CatalogoInvitacionesController.php",
+              "ToolTip": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\CatalogoInvitacionesController.php",
+              "RelativeToolTip": "app\\Http\\Controllers\\CatalogoInvitacionesController.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:11:48.658Z",
+              "WhenOpened": "2025-08-28T22:56:04.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "show.blade.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\show.blade.php",
-              "RelativeDocumentMoniker": "resources\\views\\rifas\\show.blade.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\show.blade.php",
-              "RelativeToolTip": "resources\\views\\rifas\\show.blade.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABJAAAAAAAAAA==",
+              "Title": "plantilla001.blade.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
+              "RelativeDocumentMoniker": "resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
+              "ToolTip": "C:\\wamp64\\www\\rrb-central\\resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
+              "RelativeToolTip": "resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAkwDQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:11:32.494Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "index.blade.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\index.blade.php",
-              "RelativeDocumentMoniker": "resources\\views\\rifas\\index.blade.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\resources\\views\\rifas\\index.blade.php",
-              "RelativeToolTip": "resources\\views\\rifas\\index.blade.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:10:01.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RifaAdminController.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaAdminController.php",
-              "RelativeDocumentMoniker": "app\\Http\\Controllers\\Rifas\\RifaAdminController.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaAdminController.php",
-              "RelativeToolTip": "app\\Http\\Controllers\\Rifas\\RifaAdminController.php",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwF0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:09:35.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RifaOperacionController.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaOperacionController.php",
-              "RelativeDocumentMoniker": "app\\Http\\Controllers\\Rifas\\RifaOperacionController.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaOperacionController.php",
-              "RelativeToolTip": "app\\Http\\Controllers\\Rifas\\RifaOperacionController.php",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAkwA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:07:52.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RifaPublicController.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaPublicController.php",
-              "RelativeDocumentMoniker": "app\\Http\\Controllers\\Rifas\\RifaPublicController.php",
-              "ToolTip": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\Rifas\\RifaPublicController.php",
-              "RelativeToolTip": "app\\Http\\Controllers\\Rifas\\RifaPublicController.php",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
-              "WhenOpened": "2025-08-28T21:07:34.607Z",
+              "WhenOpened": "2025-08-28T22:55:21.32Z",
               "EditorCaption": ""
             }
           ]

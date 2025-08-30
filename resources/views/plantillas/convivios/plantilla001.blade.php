@@ -11,157 +11,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
 
-  <style>
-    :root{
-      --pink:#ff7fb0;
-      --pink-2:#ff9cc3;
-      --rose:#ffd5e5;
-      --bg:#fff6fb;
-      --ink:#0f1226;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; background: radial-gradient(1200px 600px at 70% -10%, #ffe3f0 0%, #fff7fb 45%, #fff 90%) fixed;
-      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto; color:#5b4661;
-    }
-
-    /* ========== INTRO (20s) ========== */
-    .intro{
-      position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center;
-      background:
-        radial-gradient(1000px 500px at 10% -20%, #ffd9ec 0%, rgba(255,217,236,.0) 60%) ,
-        radial-gradient(1200px 700px at 90% 120%, #ffeaf4 0%, rgba(255,234,244,0) 60%) ,
-        linear-gradient(180deg,#fff6fb 0%,#ffeef7 100%);
-      overflow:hidden;
-    }
-    .intro__content{ text-align:center; padding:2rem; max-width:900px }
-    .intro__line-1{
-      font:800 clamp(24px,5vw,56px)/1.1 'Poppins',sans-serif; letter-spacing:.5px; color:#ff5aa8;
-      text-shadow:0 6px 24px rgba(255,90,168,.25);
-    }
-    .intro__line-2{
-      font:400 clamp(16px,2.4vw,26px)/1.5 'Poppins',sans-serif; margin-top:1rem; color:#7e5a76;
-    }
-    .intro__progress{
-      position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(255,122,176,.15);
-      overflow:hidden;
-    }
-    .intro__bar{
-      height:100%; width:0; background:linear-gradient(90deg,var(--pink),var(--pink-2));
-      animation:introbar 20s linear forwards;
-    }
-    @keyframes introbar{ to{width:100%} }
-
-    .intro__skip{
-      position:absolute; right:16px; top:16px; z-index:2;
-      background:#fff; color:#ff4a9d; border:2px solid #ffc2dc; border-radius:999px;
-      padding:.45rem .9rem; font-weight:700; box-shadow:0 8px 30px rgba(255,90,168,.15);
-    }
-    .intro--hide{ animation:fadeOut .8s ease forwards }
-    @keyframes fadeOut{ to{opacity:0; visibility:hidden} }
-
-    /* Corazones flotando (sutil, puedes quitarlo si quieres) */
-    .heart{
-      position:absolute; width:14px; height:14px; transform:rotate(45deg);
-      background:var(--pink); opacity:.14; border-radius:3px;
-      animation:rise linear forwards;
-    }
-    .heart:before,.heart:after{
-      content:""; position:absolute; width:14px; height:14px; background:var(--pink); border-radius:50%;
-    }
-    .heart:before{left:-7px; top:0}
-    .heart:after{top:-7px; left:0}
-    @keyframes rise{
-      0%{ transform:translateY(20vh) rotate(45deg) scale(.8); opacity:.0 }
-      10%{ opacity:.18 }
-      100%{ transform:translateY(-110vh) rotate(45deg) scale(1.2); opacity:0 }
-    }
-
-    /* ========== TARJETA (después de la intro) ========== */
-    .invite{
-      min-height:100svh; display:grid; place-items:center; padding:48px 16px 64px;
-    }
-    .card-baby{
-      width:min(980px,95vw);
-      background:rgba(255,255,255,.75);
-      backdrop-filter: blur(6px);
-      border:1px solid #ffe2ef; border-radius:28px;
-      box-shadow:0 18px 60px rgba(255,140,180,.25);
-      overflow:hidden; position:relative;
-    }
-    .card-baby:before, .card-baby:after{
-      content:""; position:absolute; width:420px; height:420px; border-radius:50%;
-      filter:blur(50px); z-index:0; opacity:.35;
-    }
-    .card-baby:before{ background:#ffd5e5; top:-160px; left:-120px }
-    .card-baby:after{ background:#ffe7f1; bottom:-180px; right:-140px }
-
-    .ribbon{
-      position:absolute; inset:auto 0; top:0; height:96px; background:
-        repeating-linear-gradient(135deg, #ffcbe1 0 22px, #ffddea 22px 44px);
-      clip-path: polygon(0 0,100% 0,100% 70%,92% 100%,85% 70%,78% 100%,71% 70%,64% 100%,57% 70%,50% 100%,43% 70%,36% 100%,29% 70%,22% 100%,15% 70%,8% 100%,0 70%);
-      opacity:.35;
-    }
-
-    .card-baby .inner{ position:relative; z-index:2; padding:44px 28px 32px }
-    .badge-top{ text-align:center; margin-bottom:10px }
-    .badge-top span{
-      display:inline-block; font:800 14px/1 'Poppins',sans-serif; letter-spacing:4px;
-      color:#ff4fa3; background:#ffe6f1; border:2px dashed #ffb5d2; padding:8px 16px; border-radius:999px;
-    }
-
-    .title{
-      text-align:center; margin:10px 0 12px;
-      font:800 clamp(30px,6vw,58px)/1.05 'Poppins',sans-serif; color:#ff4fa3;
-    }
-    .subtitle{
-      text-align:center; color:#7f5d77; max-width:760px; margin:0 auto 22px;
-      font-weight:400; font-size:clamp(14px,2.3vw,18px);
-    }
-
-    .centerpiece{
-      display:grid; place-items:center; margin:18px 0 12px;
-    }
-    .centerpiece img{
-      width:min(360px,70vw); height:auto; object-fit:contain;
-      filter: drop-shadow(0 20px 40px rgba(255,140,180,.25));
-    }
-
-    .name-banner{
-      display:inline-block; background:linear-gradient(90deg,#ff7fb0,#ff9cc3);
-      color:#fff; padding:10px 22px; border-radius:999px; font:700 clamp(20px,5vw,34px)/1 'Pacifico',cursive;
-      box-shadow:0 12px 40px rgba(255,140,180,.35); letter-spacing:.5px;
-    }
-
-    .when{
-      display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:16px;
-      margin:26px auto 10px; max-width:760px;
-    }
-    .divider{height:2px; background:linear-gradient(90deg,transparent, #ffd3e7 40%, #ffd3e7 60%, transparent)}
-    .date-block{
-      display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; text-align:center; align-items:end
-    }
-    .date-box h4{ margin:0; font:800 clamp(14px,2.8vw,18px)/1 'Poppins',sans-serif; color:#a06690; letter-spacing:.8px }
-    .date-box .big{ font:800 clamp(36px,10vw,64px)/1 'Poppins',sans-serif; color:#ff4fa3 }
-    .date-box .small{ margin-top:4px; font-weight:600; color:#9a6b92; letter-spacing:1px }
-
-    .place{
-      text-align:center; margin:18px auto 6px; color:#7f5d77; font-weight:500
-    }
-    .rsvp{
-      text-align:center; margin:14px auto 0; color:#a36a95; font-weight:600
-    }
-
-    .footer-pink{
-      text-align:center; padding:18px 14px 26px; background:linear-gradient(180deg,rgba(255,235,245,.65),rgba(255,235,245,0));
-    }
-
-    @media (max-width:520px){
-      .inner{ padding:32px 16px 24px }
-      .date-block{ grid-template-columns:1fr 1fr; row-gap:10px }
-      .date-block .spacer{ display:none }
-    }
-  </style>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{{ asset('css/plantillas/convivios/plantilla001.css') }}?v={{ time() }}">
 </head>
 <body>
 
@@ -182,6 +33,14 @@
   $diaNombre = ucfirst($dias[$dt->dayOfWeek]);
   $diaNum    = $dt->format('d');
   $mesTxt    = $meses[$dt->month-1];
+
+  $numPlano = preg_replace('/\D+/', '', $evento['rsvp']);     // 4521659680
+  if (substr($numPlano, 0, 2) !== '52') $numPlano = '52'.$numPlano; // MX (+52)
+
+  $hora12   = \Carbon\Carbon::parse($evento['hora'])->isoFormat('h:mm A');
+  $fechaTxt = "{$diaNombre} {$diaNum} de {$mesTxt}";
+  $waText   = "Hola, confirmo asistencia al baby shower de {$evento['nombre_bebe']} el {$fechaTxt} a las {$hora12}.";
+  $waURL    = "https://wa.me/{$numPlano}?text=" . rawurlencode($waText);
 @endphp
 
 <!-- ====== INTRO DE 20 SEGUNDOS ====== -->
@@ -194,9 +53,8 @@
       a celebrar mi cumpleaños y la llegada de nuestra bebé
     </div>
 
-    <!-- Coloca aquí tu GIF/video de fondo o stickers -->
     <div class="mt-4">
-      <img src="{{ asset('images/baby/intro-balloon.gif') }}" alt="" style="max-width:240px; opacity:.95">
+      <img src="{{ asset('images/baby/centro-globo.gif') }}" alt="" style="max-width:240px; opacity:.95">
     </div>
   </div>
 
@@ -217,8 +75,7 @@
       </p>
 
       <div class="centerpiece">
-        <!-- Reemplaza por tu PNG/GIF (globo con osito, sonaja, etc.) -->
-        <img src="{{ asset('images/baby/centro-globo.png') }}" alt="Globo con osito">
+        <img src="{{ asset('images/baby/globo_osito_bobbing.gif') }}" alt="Globo con osito">
       </div>
 
       <div class="text-center my-2">
@@ -250,13 +107,17 @@
         <strong>Lugar:</strong> {{ $evento['lugar'] }}
       </p>
 
-      <p class="rsvp">
-        Confirma tu asistencia al <strong>{{ $evento['rsvp'] }}</strong>
-      </p>
+        <p class="rsvp">
+          Confirma tu asistencia:&nbsp;
+          <a href="{{ $waURL }}" class="btn btn-success btn-sm" target="_blank" rel="noopener">
+            Confirmar por WhatsApp
+          </a>
+        </p>
+
 
       <div class="footer-pink">
-        <!-- Aquí puedes poner iconitos de pies, sonajas, mamelucos (GIF/PNG) -->
-        <img src="{{ asset('images/baby/adorno-pies.png') }}" alt="" style="height:46px; opacity:.9">
+        <!-- footer -->
+        <img src="{{ asset('images/baby/footer.png') }}" alt="" style="height:46px; opacity:.9">
       </div>
     </div>
   </article>
@@ -269,7 +130,7 @@
 
 <script>
   // ====== Control de intro (20s) ======
-  const INTRO_MS = 20000; /* 20 segundos */
+  const INTRO_MS = 3000; /* 3 segundos */
   const intro = document.getElementById('intro');
   const skip  = document.getElementById('skipIntro');
   const audio = document.getElementById('bg-audio');
@@ -282,25 +143,25 @@
     clearTimeout(introTimeout);
     intro.classList.add('intro--hide');
     setTimeout(()=> intro.remove(), 800);
-    // Si quieres música al entrar, descomenta:
-    // audio.play().catch(()=>{});
+    audio.play().catch(()=>{});
   }
 
-  // ====== Hearts suaves subiendo (decorativo) ======
-  const introEl = document.body;
-  let heartsInterval = setInterval(()=>{
-    const h = document.createElement('div');
-    h.className = 'heart';
-    h.style.left = (Math.random()*100)+'vw';
-    h.style.bottom = '-20px';
-    h.style.background = `hsl(${330 + Math.random()*20}, 85%, 75%)`;
-    h.style.animationDuration = (6 + Math.random()*6)+'s';
-    h.style.opacity = .08 + Math.random()*.12;
-    introEl.appendChild(h);
-    setTimeout(()=>h.remove(), 14000);
-  }, 300);
-  // cortamos el efecto cuando aparezca la tarjeta
-  setTimeout(()=>clearInterval(heartsInterval), INTRO_MS + 1500);
+    // ====== Hearts suaves subiendo (decorativo) ======
+    const heartsLayer = document.createElement('div');
+    heartsLayer.className = 'hearts-layer';
+    document.body.appendChild(heartsLayer);
+
+    let heartsInterval = setInterval(()=>{
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.style.left = (Math.random()*100)+'vw';
+      h.style.bottom = '-20px';
+      h.style.background = `hsl(${330 + Math.random()*20}, 85%, 75%)`;
+      h.style.animationDuration = (6 + Math.random()*6)+'s';
+      h.style.opacity = .08 + Math.random()*.12;
+      heartsLayer.appendChild(h);
+      setTimeout(()=>h.remove(), 14000);
+    }, 300);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

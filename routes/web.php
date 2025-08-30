@@ -12,7 +12,8 @@ Route::get('/sistemas', [App\Http\Controllers\HomeController::class, 'systems'])
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 
 
-
+// Invitación Anya (pública)
+Route::view('/anya', 'invitaciones.anya')->name('anya');
 
 /* =========================
 |  RIFAS (PUBLICO)
