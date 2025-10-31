@@ -61,7 +61,6 @@
             <img src="https://img.icons8.com/ios-filled/64/4e54c8/warehouse.png" alt="Inventarios">
             <h5 class="card-title mt-3">Inventarios</h5>
             <p class="card-text">Control de productos, QR y movimientos de almacén.</p>
-            <a href="http://utmorelia.com/sistemaInventarios" class="btn btn-primary">Ir a demo</a>
           </div>
         </div>
       </div>
@@ -72,7 +71,6 @@
             <img src="https://img.icons8.com/ios-filled/64/4e54c8/attendance-mark.png" alt="Asistencias RFID">
             <h5 class="card-title mt-3">Asistencias RFID</h5>
             <p class="card-text">Registro de entradas/salidas con ESP32 y Laravel.</p>
-            <a href="http://utmorelia.com/sistemaAsistencias" class="btn btn-primary">Ir a demo</a>
           </div>
         </div>
       </div>

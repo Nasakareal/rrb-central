@@ -1,16 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\css",
-    "\\public\\css\\plantillas",
-    "\\public\\css\\plantillas\\boda",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\resources",
-    "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\plantillas\\boda",
-    "\\routes"
+    "\\resources\\views"
   ],
-  "SelectedNode": "\\resources\\views\\invitaciones\\anya.blade.php",
+  "SelectedNode": "\\resources\\views\\systems.blade.php",
   "PreviewInSolutionExplorer": false
 }

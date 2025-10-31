@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\wamp64\\www\\rrb-central\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\resources\\views\\invitaciones\\anya.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\invitaciones\\anya.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\resources\\views\\plantillas\\convivios\\plantilla001.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\plantillas\\convivios\\plantilla001.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\routes\\web.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:routes\\web.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\public\\css\\plantillas\\convivios\\plantilla001.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\css\\plantillas\\convivios\\plantilla001.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\CatalogoInvitacionesController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -18,11 +30,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "anya.blade.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\resources\\views\\invitaciones\\anya.blade.php",
+              "RelativeDocumentMoniker": "resources\\views\\invitaciones\\anya.blade.php",
+              "ToolTip": "C:\\wamp64\\www\\rrb-central\\resources\\views\\invitaciones\\anya.blade.php",
+              "RelativeToolTip": "resources\\views\\invitaciones\\anya.blade.php",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAkwH0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2025-08-30T23:15:17.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "web.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\routes\\web.php",
+              "RelativeDocumentMoniker": "routes\\web.php",
+              "ToolTip": "C:\\wamp64\\www\\rrb-central\\routes\\web.php",
+              "RelativeToolTip": "routes\\web.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2025-08-30T23:12:41.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "plantilla001.css",
+              "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\public\\css\\plantillas\\convivios\\plantilla001.css",
+              "RelativeDocumentMoniker": "public\\css\\plantillas\\convivios\\plantilla001.css",
+              "ToolTip": "C:\\wamp64\\www\\rrb-central\\public\\css\\plantillas\\convivios\\plantilla001.css",
+              "RelativeToolTip": "public\\css\\plantillas\\convivios\\plantilla001.css",
+              "ViewState": "AgIAADMBAAAAAAAAAAAkwFMBAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-30T22:22:42.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CatalogoInvitacionesController.php",
               "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\app\\Http\\Controllers\\CatalogoInvitacionesController.php",
               "RelativeDocumentMoniker": "app\\Http\\Controllers\\CatalogoInvitacionesController.php",
@@ -35,13 +86,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "plantilla001.blade.php",
               "DocumentMoniker": "C:\\wamp64\\www\\rrb-central\\resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
               "RelativeDocumentMoniker": "resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
               "ToolTip": "C:\\wamp64\\www\\rrb-central\\resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
               "RelativeToolTip": "resources\\views\\plantillas\\convivios\\plantilla001.blade.php",
-              "ViewState": "AgIAAAQBAAAAAAAAAAAkwDQBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAkwKkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
               "WhenOpened": "2025-08-28T22:55:21.32Z",
               "EditorCaption": ""
