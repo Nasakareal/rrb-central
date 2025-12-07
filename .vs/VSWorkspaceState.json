@@ -5,8 +5,10 @@
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\resources",
-    "\\resources\\views"
+    "\\resources\\views",
+    "\\resources\\views\\centauros",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\systems.blade.php",
+  "SelectedNode": "\\resources\\views\\centauros\\intercambio.blade.php",
   "PreviewInSolutionExplorer": false
 }
