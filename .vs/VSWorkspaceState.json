@@ -6,9 +6,10 @@
     "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\centauros",
+    "\\resources\\views\\facebook-analyzer",
+    "\\resources\\views\\layouts",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\centauros\\intercambio.blade.php",
+  "SelectedNode": "\\resources\\views\\layouts\\facebook-analyzer.blade.php",
   "PreviewInSolutionExplorer": false
 }

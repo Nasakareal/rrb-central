@@ -6,12 +6,17 @@ use App\Http\Controllers\Rifas\RifaPublicController;
 use App\Http\Controllers\Rifas\RifaOperacionController;
 use App\Http\Controllers\Rifas\RifaAdminController;
 use App\Http\Controllers\CentaurosController;
+use App\Http\Controllers\FacebookAnalyzerController;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/sistemas', [App\Http\Controllers\HomeController::class, 'systems'])->name('sistemas');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 
+
+Route::prefix('facebook-analyzer')->name('facebook-analyzer.')->group(function () {
+    Route::get('/', [FacebookAnalyzerController::class, 'index'])->name('index');
+});
 
 Route::prefix('centauros')->group(function () {
     Route::get('/', [CentaurosController::class, 'index'])->name('centauros.index');
