@@ -1,15 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\facebook-analyzer",
-    "\\resources\\views\\layouts",
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\mensaje",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\layouts\\facebook-analyzer.blade.php",
   "PreviewInSolutionExplorer": false
 }

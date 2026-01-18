@@ -27,6 +27,9 @@ Route::prefix('centauros')->group(function () {
 // Invitación Anya (pública)
 Route::view('/anya', 'invitaciones.anya')->name('anya');
 
+Route::view('/mensaje/uno', 'mensaje.uno')->name('uno');
+
+
 /* =========================
 |  RIFAS (PUBLICO)
 |=========================*/
