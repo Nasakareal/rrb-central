@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\resources",
-    "\\resources\\views",
-    "\\resources\\views\\invitaciones",
-    "\\resources\\views\\mensaje",
-    "\\routes"
+    "\\resources\\views"
   ],
+  "SelectedNode": "\\resources\\views\\welcome.blade.php",
   "PreviewInSolutionExplorer": false
 }
