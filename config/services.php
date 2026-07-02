@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'poleos' => [
+        'token' => env('POLEOS_API_TOKEN'),
+    ],
+
 ];
