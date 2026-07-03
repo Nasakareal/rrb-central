@@ -37,7 +37,19 @@ class EmpleadoController extends Controller
 
     public function store(Request $request)
     {
-        $empleado = Empleado::create($this->validatedData($request));
+        $empleado = Empleado::where('numero_reloj', $request->input('numero_reloj'))->first();
+        $data = $this->validatedData($request, $empleado);
+
+        if ($empleado) {
+            $empleado->update($data);
+
+            return response()->json([
+                'message' => 'Empleado actualizado correctamente.',
+                'data' => $empleado->load(['campus', 'departamento', 'puesto']),
+            ]);
+        }
+
+        $empleado = Empleado::create($data);
 
         return response()->json([
             'message' => 'Empleado registrado correctamente.',
