@@ -32,6 +32,9 @@ Route::middleware('poleos.token')->prefix('poleos')->group(function () {
     });
 
     Route::post('/importar', [PoleoImportController::class, 'store']);
+    Route::get('/asistencias', [PoleoImportController::class, 'asistencias']);
+    Route::get('/importaciones', [PoleoImportController::class, 'importaciones']);
+    Route::get('/reportes', [PoleoImportController::class, 'reportes']);
     Route::get('/catalogos', [PoleoCatalogController::class, 'index']);
     Route::post('/campus', [PoleoCatalogController::class, 'storeCampus']);
     Route::post('/departamentos', [PoleoCatalogController::class, 'storeDepartamento']);

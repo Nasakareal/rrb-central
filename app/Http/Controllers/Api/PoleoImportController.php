@@ -11,6 +11,51 @@ use Illuminate\Support\Facades\DB;
 
 class PoleoImportController extends Controller
 {
+    public function importaciones(Request $request)
+    {
+        $perPage = max(1, min((int) $request->input('per_page', 50), 100));
+
+        return response()->json([
+            'data' => PoleoImportado::query()
+                ->latest()
+                ->paginate($perPage),
+        ]);
+    }
+
+    public function asistencias(Request $request)
+    {
+        $perPage = max(1, min((int) $request->input('per_page', 50), 100));
+
+        $query = Asistencia::with('empleado')
+            ->orderByDesc('fecha')
+            ->orderBy('entrada');
+
+        $this->aplicarRangoFechas($query, $request);
+
+        return response()->json([
+            'data' => $query->paginate($perPage),
+        ]);
+    }
+
+    public function reportes(Request $request)
+    {
+        $query = Asistencia::query();
+        $this->aplicarRangoFechas($query, $request);
+
+        $resumen = $query
+            ->selectRaw('fecha')
+            ->selectRaw('COUNT(*) as registros')
+            ->selectRaw('COUNT(DISTINCT empleado_id) as empleados')
+            ->selectRaw("SUM(CASE WHEN salida IS NULL THEN 1 ELSE 0 END) as incompletos")
+            ->groupBy('fecha')
+            ->orderBy('fecha')
+            ->get();
+
+        return response()->json([
+            'data' => $resumen,
+        ]);
+    }
+
     public function store(Request $request)
     {
         $this->normalizarPayload($request);
@@ -102,6 +147,17 @@ class PoleoImportController extends Controller
             'message' => 'Poleo importado correctamente.',
             'data' => $resultado,
         ], $resultado['importadas'] > 0 ? 201 : 200);
+    }
+
+    private function aplicarRangoFechas($query, Request $request): void
+    {
+        if ($request->filled('desde')) {
+            $query->whereDate('fecha', '>=', $request->input('desde'));
+        }
+
+        if ($request->filled('hasta')) {
+            $query->whereDate('fecha', '<=', $request->input('hasta'));
+        }
     }
 
     private function normalizarPayload(Request $request): void
