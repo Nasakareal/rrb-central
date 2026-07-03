@@ -14,6 +14,7 @@ class Asistencia extends Model
         'total_marcas',
         'observaciones',
         'archivo_origen',
+        'llave_registro',
     ];
 
     protected $casts = [

@@ -21,8 +21,13 @@ class PoleoImportController extends Controller
             'registros' => ['required', 'array', 'min:1'],
             'registros.*.numero_reloj' => ['required', 'string', 'max:50'],
             'registros.*.empleado' => ['nullable', 'string', 'max:50'],
+            'registros.*.numero_empleado' => ['nullable', 'string', 'max:50'],
             'registros.*.nombre' => ['nullable', 'string', 'max:150'],
+            'registros.*.apellido_paterno' => ['nullable', 'string', 'max:100'],
+            'registros.*.apellido_materno' => ['nullable', 'string', 'max:100'],
             'registros.*.campus_id' => ['nullable', 'integer', 'min:1'],
+            'registros.*.departamento_id' => ['nullable', 'integer', 'min:1'],
+            'registros.*.puesto_id' => ['nullable', 'integer', 'min:1'],
             'registros.*.fecha' => ['required', 'date_format:Y-m-d'],
             'registros.*.entrada' => ['required', 'date_format:H:i:s'],
             'registros.*.salida' => ['nullable', 'date_format:H:i:s'],
@@ -46,35 +51,36 @@ class PoleoImportController extends Controller
                 $empleado = Empleado::firstOrCreate(
                     ['numero_reloj' => $registro['numero_reloj']],
                     [
+                        'numero_empleado' => $registro['numero_empleado'] ?? null,
                         'nombre' => $registro['nombre'] ?? null,
+                        'apellido_paterno' => $registro['apellido_paterno'] ?? null,
+                        'apellido_materno' => $registro['apellido_materno'] ?? null,
                         'campus_id' => $registro['campus_id'] ?? null,
+                        'departamento_id' => $registro['departamento_id'] ?? null,
+                        'puesto_id' => $registro['puesto_id'] ?? null,
                     ]
                 );
 
                 if (!$empleado->wasRecentlyCreated) {
-                    $updates = [];
-
-                    if (empty($empleado->nombre) && !empty($registro['nombre'])) {
-                        $updates['nombre'] = $registro['nombre'];
-                    }
-
-                    if (empty($empleado->campus_id) && !empty($registro['campus_id'])) {
-                        $updates['campus_id'] = $registro['campus_id'];
-                    }
-
-                    if (!empty($updates)) {
-                        $empleado->update($updates);
-                    }
+                    $this->completarDatosEmpleado($empleado, $registro);
                 }
 
+                $llaveRegistro = $this->crearLlaveRegistro(
+                    $empleado->id,
+                    $registro['fecha'],
+                    $registro['entrada'],
+                    $registro['salida'] ?? null
+                );
+
                 $asistencia = Asistencia::firstOrCreate(
+                    [
+                        'llave_registro' => $llaveRegistro,
+                    ],
                     [
                         'empleado_id' => $empleado->id,
                         'fecha' => $registro['fecha'],
                         'entrada' => $registro['entrada'],
                         'salida' => $registro['salida'] ?? null,
-                    ],
-                    [
                         'total_marcas' => $registro['marcas'],
                         'observaciones' => $registro['observaciones'] ?? null,
                         'archivo_origen' => $data['archivo'],
@@ -174,5 +180,40 @@ class PoleoImportController extends Controller
         }
 
         return $date->format('Y-m-d');
+    }
+
+    private function completarDatosEmpleado(Empleado $empleado, array $registro): void
+    {
+        $campos = [
+            'numero_empleado',
+            'nombre',
+            'apellido_paterno',
+            'apellido_materno',
+            'campus_id',
+            'departamento_id',
+            'puesto_id',
+        ];
+
+        $updates = [];
+
+        foreach ($campos as $campo) {
+            if (empty($empleado->{$campo}) && !empty($registro[$campo])) {
+                $updates[$campo] = $registro[$campo];
+            }
+        }
+
+        if (!empty($updates)) {
+            $empleado->update($updates);
+        }
+    }
+
+    private function crearLlaveRegistro($empleadoId, string $fecha, string $entrada, $salida): string
+    {
+        return sha1(implode('|', [
+            $empleadoId,
+            $fecha,
+            $entrada,
+            $salida ?: '',
+        ]));
     }
 }

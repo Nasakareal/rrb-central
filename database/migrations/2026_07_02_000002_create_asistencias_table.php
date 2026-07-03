@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->unsignedInteger('total_marcas')->default(0);
             $table->text('observaciones')->nullable();
             $table->string('archivo_origen', 255)->nullable();
+            $table->string('llave_registro', 40)->unique();
             $table->timestamps();
 
             $table->unique(
