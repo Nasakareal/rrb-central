@@ -1,0 +1,7 @@
+{
+    "latest_version":  "0.1.0",
+    "download_url":  "https://rrb-soluciones.com/biosync/BioSync.exe",
+    "sha256":  "0DB62BE323A0937DF89DA149515F8BE4FD8C2669F895F39E4B86276C68B7CBFE",
+    "required":  false,
+    "message":  "Primera version distribuida de BioSync."
+}

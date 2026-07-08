@@ -46,3 +46,7 @@ Route::middleware('poleos.token')->prefix('poleos')->group(function () {
     Route::put('/empleados/{empleado}', [EmpleadoController::class, 'update']);
     Route::post('/empleados/{empleado}/horarios', [EmpleadoController::class, 'asignarHorario']);
 });
+
+Route::middleware('poleos.token')->prefix('licencias')->group(function () {
+    Route::get('/verificar', [\App\Http\Controllers\Api\BioSyncLicenciaController::class, 'verificar']);
+});
