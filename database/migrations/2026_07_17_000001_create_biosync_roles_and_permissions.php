@@ -19,11 +19,13 @@ return new class extends Migration {
     {
         app(PermissionRegistrar::class)->forgetCachedPermissions();
 
+        $permissionModels = collect();
+
         foreach ($this->permissions as $permission) {
-            Permission::firstOrCreate([
-                'name' => $permission,
-                'guard_name' => 'web',
-            ]);
+            $permissionModels->put(
+                $permission,
+                Permission::findOrCreate($permission, 'web')
+            );
         }
 
         app(PermissionRegistrar::class)->forgetCachedPermissions();
@@ -43,26 +45,23 @@ return new class extends Migration {
         ];
 
         foreach ($roles as $roleName => $permissions) {
-            $role = Role::firstOrCreate([
-                'name' => $roleName,
-                'guard_name' => 'web',
-            ]);
-            $role->syncPermissions($permissions);
+            $role = Role::findOrCreate($roleName, 'web');
+            $role->syncPermissions($permissionModels->only($permissions)->values());
         }
 
         $administrador = Role::where('name', 'Administrador')->where('guard_name', 'web')->first();
         if ($administrador) {
-            $administrador->givePermissionTo($this->permissions);
+            $administrador->givePermissionTo($permissionModels->values());
         }
 
         $encargado = Role::where('name', 'encargado')->where('guard_name', 'web')->first();
         if ($encargado) {
-            $encargado->givePermissionTo([
+            $encargado->givePermissionTo($permissionModels->only([
                 'ver biosync',
                 'importar poleos biosync',
                 'gestionar empleados biosync',
                 'ver reportes biosync',
-            ]);
+            ])->values());
         }
 
         app(PermissionRegistrar::class)->forgetCachedPermissions();
