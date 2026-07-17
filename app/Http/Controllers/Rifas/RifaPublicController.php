@@ -52,7 +52,7 @@ class RifaPublicController extends Controller
     {
         $user = $request->user();
         $boletos = RifaBoleto::where('rifa_id', $rifa->rifa_id)
-            ->where('user_id', $user?->id)
+            ->where('user_id', $user ? $user->id : null)
             ->orderBy('numero')
             ->get();
 

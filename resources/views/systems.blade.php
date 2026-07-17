@@ -68,9 +68,10 @@
       <div class="col-md-4">
         <div class="card card-hover h-100 text-center">
           <div class="card-body">
-            <img src="https://img.icons8.com/ios-filled/64/4e54c8/attendance-mark.png" alt="Asistencias RFID">
-            <h5 class="card-title mt-3">Asistencias RFID</h5>
-            <p class="card-text">Registro de entradas/salidas con ESP32 y Laravel.</p>
+            <img src="{{ asset('utm.png') }}" alt="BioSync UTM" class="img-fluid mx-auto d-block" style="max-height: 80px;">
+            <h5 class="card-title mt-3">BioSync UTM</h5>
+            <p class="card-text">Importación de poleos, empleados y reportes de asistencia en línea.</p>
+            <a href="{{ route('biosync.index') }}" class="btn btn-primary">Abrir BioSync</a>
           </div>
         </div>
       </div>

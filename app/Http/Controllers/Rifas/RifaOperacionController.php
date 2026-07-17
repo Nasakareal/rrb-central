@@ -29,7 +29,7 @@ class RifaOperacionController extends Controller
 
         if ($rifa->max_boletos_por_usuario) {
             $yaApartadosOVendidos = RifaBoleto::where('rifa_id', $rifa->rifa_id)
-                ->where('user_id', $user?->id)
+                ->where('user_id', $user ? $user->id : null)
                 ->whereIn('estado', ['apartado','vendido'])
                 ->count();
 
@@ -62,7 +62,7 @@ class RifaOperacionController extends Controller
 
                 if ($b->estado === 'disponible' || $esVencido) {
                     $b->estado = 'apartado';
-                    $b->user_id = $user?->id;
+                    $b->user_id = $user ? $user->id : null;
                     $b->reservado_hasta = now()->addMinutes($minutosReserva);
                     $b->fyh_actualizacion = $vencidosLiberados;
                     $b->save();
@@ -156,7 +156,7 @@ class RifaOperacionController extends Controller
 
             $orden = RifaOrden::create([
                 'rifa_id'          => $rifa->rifa_id,
-                'user_id'          => $user?->id,
+                'user_id'          => $user ? $user->id : null,
                 'comprador_nombre' => $data['comprador_nombre'] ?? null,
                 'comprador_telefono'=> $data['comprador_telefono'] ?? null,
                 'comprador_email'  => $data['comprador_email'] ?? null,

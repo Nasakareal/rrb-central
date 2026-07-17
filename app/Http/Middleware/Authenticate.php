@@ -15,6 +15,10 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
+            if ($request->is('biosync-utm') || $request->is('biosync-utm/*')) {
+                return route('biosync.login');
+            }
+
             return route('login');
         }
     }

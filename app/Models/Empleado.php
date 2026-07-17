@@ -12,6 +12,7 @@ class Empleado extends Model
         'nombre',
         'apellido_paterno',
         'apellido_materno',
+        'correo',
         'campus_id',
         'departamento_id',
         'puesto_id',

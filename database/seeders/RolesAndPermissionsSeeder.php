@@ -17,6 +17,12 @@ class RolesAndPermissionsSeeder extends Seeder
             'crear usuarios',
             'editar usuarios',
             'eliminar usuarios',
+            'gestionar biosync',
+            'ver biosync',
+            'importar poleos biosync',
+            'gestionar empleados biosync',
+            'ver reportes biosync',
+            'gestionar usuarios biosync',
 
             // Roles
             'ver roles',
@@ -111,6 +117,23 @@ class RolesAndPermissionsSeeder extends Seeder
             'Observador' => [
                 'ver requisiciones',
                 'ver productos',
+            ],
+            'BioSync Administrador' => [
+                'ver biosync',
+                'importar poleos biosync',
+                'gestionar empleados biosync',
+                'ver reportes biosync',
+                'gestionar usuarios biosync',
+            ],
+            'BioSync Operador' => [
+                'ver biosync',
+                'importar poleos biosync',
+                'gestionar empleados biosync',
+                'ver reportes biosync',
+            ],
+            'BioSync Consulta' => [
+                'ver biosync',
+                'ver reportes biosync',
             ],
         ];
 

@@ -7,11 +7,53 @@ use App\Http\Controllers\Rifas\RifaOperacionController;
 use App\Http\Controllers\Rifas\RifaAdminController;
 use App\Http\Controllers\CentaurosController;
 use App\Http\Controllers\FacebookAnalyzerController;
+use App\Http\Controllers\BioSyncWebController;
+use App\Http\Controllers\BioSyncUserController;
+use App\Http\Controllers\Auth\BioSyncSessionController;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/sistemas', [App\Http\Controllers\HomeController::class, 'systems'])->name('sistemas');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+
+Route::prefix('biosync-utm')->name('biosync.')->group(function () {
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [BioSyncSessionController::class, 'create'])->name('login');
+        Route::post('/login', [BioSyncSessionController::class, 'store'])->name('login.store');
+    });
+
+    Route::middleware(['auth', 'biosync.access'])->group(function () {
+        Route::middleware('permission:ver biosync')->group(function () {
+            Route::get('/', [BioSyncWebController::class, 'index'])->name('index');
+            Route::get('/resumen', [BioSyncWebController::class, 'resumen'])->name('resumen');
+            Route::get('/asistencias', [BioSyncWebController::class, 'asistencias'])->name('asistencias');
+            Route::get('/importaciones', [BioSyncWebController::class, 'importaciones'])->name('importaciones');
+        });
+
+        Route::post('/importar', [BioSyncWebController::class, 'importar'])
+            ->middleware('permission:importar poleos biosync')->name('importar');
+
+        Route::middleware('permission:gestionar empleados biosync')->group(function () {
+            Route::get('/empleados', [BioSyncWebController::class, 'empleados'])->name('empleados');
+            Route::post('/empleados', [BioSyncWebController::class, 'guardarEmpleado'])->name('empleados.store');
+            Route::put('/empleados/{empleado}', [BioSyncWebController::class, 'guardarEmpleado'])->name('empleados.update');
+            Route::get('/catalogos', [BioSyncWebController::class, 'catalogos'])->name('catalogos');
+        });
+
+        Route::get('/reportes', [BioSyncWebController::class, 'reportes'])
+            ->middleware('permission:ver reportes biosync')->name('reportes');
+
+        Route::middleware('permission:gestionar usuarios biosync')->group(function () {
+            Route::get('/usuarios', [BioSyncUserController::class, 'index'])->name('usuarios');
+            Route::post('/usuarios', [BioSyncUserController::class, 'store'])->name('usuarios.store');
+            Route::put('/usuarios/{user}', [BioSyncUserController::class, 'update'])->name('usuarios.update');
+            Route::delete('/usuarios/{user}/acceso', [BioSyncUserController::class, 'revoke'])->name('usuarios.revoke');
+        });
+    });
+
+    Route::post('/logout', [BioSyncSessionController::class, 'destroy'])
+        ->middleware('auth')->name('logout');
+});
 
 
 Route::prefix('facebook-analyzer')->name('facebook-analyzer.')->group(function () {

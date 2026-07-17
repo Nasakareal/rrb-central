@@ -121,6 +121,7 @@ class EmpleadoController extends Controller
             'nombre' => ['nullable', 'string', 'max:150'],
             'apellido_paterno' => ['nullable', 'string', 'max:100'],
             'apellido_materno' => ['nullable', 'string', 'max:100'],
+            'correo' => ['nullable', 'email', 'max:190'],
             'campus_id' => ['nullable', 'integer', 'exists:campus,id'],
             'departamento_id' => ['nullable', 'integer', 'exists:departamentos,id'],
             'puesto_id' => ['nullable', 'integer', 'exists:puestos,id'],
