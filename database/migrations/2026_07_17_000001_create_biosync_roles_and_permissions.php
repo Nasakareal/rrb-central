@@ -17,18 +17,26 @@ return new class extends Migration {
 
     public function up(): void
     {
-        app(PermissionRegistrar::class)->forgetCachedPermissions();
-
         $permissionModels = collect();
 
         foreach ($this->permissions as $permission) {
+            $permissionModel = Permission::query()
+                ->where('name', $permission)
+                ->where('guard_name', 'web')
+                ->first();
+
+            if (!$permissionModel) {
+                $permissionModel = Permission::create([
+                    'name' => $permission,
+                    'guard_name' => 'web',
+                ]);
+            }
+
             $permissionModels->put(
                 $permission,
-                Permission::findOrCreate($permission, 'web')
+                $permissionModel
             );
         }
-
-        app(PermissionRegistrar::class)->forgetCachedPermissions();
 
         $roles = [
             'BioSync Administrador' => $this->permissions,
@@ -45,7 +53,18 @@ return new class extends Migration {
         ];
 
         foreach ($roles as $roleName => $permissions) {
-            $role = Role::findOrCreate($roleName, 'web');
+            $role = Role::query()
+                ->where('name', $roleName)
+                ->where('guard_name', 'web')
+                ->first();
+
+            if (!$role) {
+                $role = Role::create([
+                    'name' => $roleName,
+                    'guard_name' => 'web',
+                ]);
+            }
+
             $role->syncPermissions($permissionModels->only($permissions)->values());
         }
 
