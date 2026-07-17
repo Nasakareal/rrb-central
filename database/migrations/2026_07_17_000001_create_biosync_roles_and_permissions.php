@@ -7,6 +7,7 @@ use Spatie\Permission\PermissionRegistrar;
 
 return new class extends Migration {
     private $permissions = [
+        'gestionar biosync',
         'ver biosync',
         'importar poleos biosync',
         'gestionar empleados biosync',
@@ -24,6 +25,8 @@ return new class extends Migration {
                 'guard_name' => 'web',
             ]);
         }
+
+        app(PermissionRegistrar::class)->forgetCachedPermissions();
 
         $roles = [
             'BioSync Administrador' => $this->permissions,
