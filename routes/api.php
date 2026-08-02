@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EmpleadoController;
 use App\Http\Controllers\Api\PoleoCatalogController;
 use App\Http\Controllers\Api\PoleoImportController;
+use App\Http\Controllers\Api\RelojMarcaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::middleware('poleos.token')->prefix('poleos')->group(function () {
     });
 
     Route::post('/importar', [PoleoImportController::class, 'store']);
+    Route::post('/marcas', [RelojMarcaController::class, 'store']);
     Route::get('/asistencias', [PoleoImportController::class, 'asistencias']);
     Route::get('/importaciones', [PoleoImportController::class, 'importaciones']);
     Route::get('/reportes', [PoleoImportController::class, 'reportes']);
