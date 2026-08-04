@@ -1,7 +1,7 @@
 {
-    "latest_version":  "0.2.0",
+    "latest_version":  "0.2.1",
     "download_url":  "https://rrb-soluciones.com/biosync/BioSync.exe",
-    "sha256":  "CA6ED4DE89140EA70CCF867F49B4243895E108159F9888DFDEF9404FFD257F42",
-    "required":  false,
-    "message":  "Integracion automatica con reloj ZKTeco ST100, cola sin duplicados y sincronizacion de empleados."
+    "sha256":  "6479BD39C7F7750AD66BCEDE820902DA356953416A66E5BEEF9A91C991A9D4AA",
+    "required":  true,
+    "message":  "BioSync 0.2.1 activa la sincronizacion automatica en instalaciones existentes y fuerza la actualizacion del equipo de campo."
 }
