@@ -8,8 +8,13 @@
         file: null,
         fileHash: '',
         records: [],
+        marks: [],
         ignoredLines: 0,
-        employees: []
+        employees: [],
+        schedules: [],
+        reportItems: [],
+        reportSummary: [],
+        selectedIncident: null
     };
     var titles = {
         inicio: ['Inicio', 'Resumen operativo de BioSync'],
@@ -248,7 +253,13 @@
             };
         });
 
-        return { records: records, ignored: ignored };
+        return {
+            records: records,
+            marks: marks.map(function (mark) {
+                return { numero_reloj: mark.employee, fecha_hora: mark.date + ' ' + mark.time };
+            }),
+            ignored: ignored
+        };
     }
 
     function validDateTime(dateText, timeText) {
@@ -279,6 +290,7 @@
             state.file = file;
             state.fileHash = results[1];
             state.records = parsed.records;
+            state.marks = parsed.marks;
             state.ignoredLines = parsed.ignored;
             qs('#fileName').textContent = file.name;
             qs('#fileRecords').textContent = parsed.records.length.toLocaleString('es-MX');
@@ -304,7 +316,7 @@
         setStatus('Enviando poleo al servidor...');
         api(config.importar, {
             method: 'POST',
-            body: { archivo: state.file.name, hash: state.fileHash, registros: state.records }
+            body: { archivo: state.file.name, hash: state.fileHash, registros: state.records, marcas_detalle: state.marks }
         }).then(function (payload) {
             var result = payload.data;
             showToast(payload.message + ' Nuevos: ' + result.importadas + '. Duplicados: ' + result.duplicadas + '.', 'success');
@@ -416,7 +428,9 @@
         qs('#employeeDepartment').value = item.departamento ? item.departamento.nombre : '';
         qs('#employeePosition').value = item.puesto ? item.puesto.nombre : '';
         qs('#employeeEmail').value = item.correo || '';
+        qs('#employeeType').value = item.tipo_personal || 'administrativo';
         qs('#employeeActive').checked = item.estatus === 'activo';
+        renderAssignedSchedules(item.horarios || []);
         qs('#employeeFormTitle').textContent = 'Editar usuario';
         qs('#saveEmployee').textContent = 'Guardar cambios';
         setStatus('Editando empleado ' + item.numero_reloj + '.');
@@ -429,6 +443,8 @@
         qs('#employeeForm').reset();
         qs('#employeeDatabaseId').value = '';
         qs('#employeeActive').checked = true;
+        qs('#employeeType').value = 'administrativo';
+        qs('#employeeAssignedSchedules').textContent = 'Guarda o selecciona un empleado para asignarle horarios.';
         qs('#employeeFormTitle').textContent = 'Registrar usuario';
         qs('#saveEmployee').textContent = 'Registrar usuario';
         qsa('#employeesTable tr').forEach(function (row) { row.classList.remove('is-selected'); });
@@ -446,6 +462,7 @@
             departamento: qs('#employeeDepartment').value.trim() || null,
             puesto: qs('#employeePosition').value.trim() || null,
             correo: qs('#employeeEmail').value.trim() || null,
+            tipo_personal: qs('#employeeType').value,
             estatus: qs('#employeeActive').checked ? 'activo' : 'inactivo'
         };
         if (!payload.numero_reloj) {
@@ -477,7 +494,59 @@
         return api(config.catalogos).then(function (payload) {
             fillDatalist('#departmentOptions', payload.data.departamentos);
             fillDatalist('#positionOptions', payload.data.puestos);
+            state.schedules = payload.data.horarios || [];
+            fillSchedules(state.schedules);
         }).catch(function () {});
+    }
+
+    function fillSchedules(items) {
+        var select = qs('#employeeSchedule');
+        select.innerHTML = '<option value="">Seleccionar...</option>';
+        items.forEach(function (item) {
+            var option = document.createElement('option');
+            option.value = item.id;
+            option.textContent = item.nombre + ' (' + item.hora_entrada.slice(0, 5) + '-' + item.hora_salida.slice(0, 5) + ')';
+            select.appendChild(option);
+        });
+    }
+
+    function renderAssignedSchedules(items) {
+        qs('#employeeAssignedSchedules').textContent = items.length
+            ? items.map(function (item) { return item.nombre + ' ' + item.hora_entrada.slice(0, 5) + '-' + item.hora_salida.slice(0, 5); }).join(' · ')
+            : 'Este empleado todavía no tiene bloques asignados.';
+    }
+
+    function createSchedule() {
+        var days = qsa('.weekday-picker input:checked').map(function (input) { return input.value; });
+        var payload = {
+            nombre: qs('#newScheduleName').value.trim(),
+            hora_entrada: qs('#newScheduleEntry').value,
+            hora_salida: qs('#newScheduleExit').value,
+            dias_semana: days.join(',')
+        };
+        if (!payload.nombre || !payload.hora_entrada || !payload.hora_salida || !days.length) {
+            showToast('Captura nombre, entrada, salida y al menos un día.', 'error');
+            return;
+        }
+        api(config.horarios, { method: 'POST', body: payload }).then(function (response) {
+            showToast(response.message, 'success');
+            qs('#newScheduleName').value = '';
+            return loadCatalogs();
+        }).catch(function (error) { showToast(error.message, 'error'); });
+    }
+
+    function assignSchedule() {
+        var employeeId = qs('#employeeDatabaseId').value;
+        var scheduleId = qs('#employeeSchedule').value;
+        var start = qs('#scheduleStart').value;
+        if (!employeeId) { showToast('Primero guarda o selecciona al empleado.', 'error'); return; }
+        if (!scheduleId || !start) { showToast('Selecciona un bloque y su fecha de inicio.', 'error'); return; }
+        api(config.asignarHorarioBase + '/' + employeeId + '/horarios', {
+            method: 'POST', body: { horario_id: Number(scheduleId), fecha_inicio: start }
+        }).then(function (response) {
+            showToast(response.message, 'success');
+            return loadEmployees().then(function () { editEmployee(employeeId); });
+        }).catch(function (error) { showToast(error.message, 'error'); });
     }
 
     function fillDatalist(selector, values) {
@@ -630,6 +699,7 @@
         var start = new Date(today.getFullYear(), today.getMonth(), 1);
         qs('#reportFrom').value = localDate(start);
         qs('#reportTo').value = localDate(today);
+        qs('#scheduleStart').value = localDate(today);
     }
 
     function localDate(date) {
@@ -649,9 +719,14 @@
         }
         setStatus('Generando reporte...');
         return api(config.reportes + '?desde=' + encodeURIComponent(from) + '&hasta=' + encodeURIComponent(to)).then(function (payload) {
-            renderReport(payload.data);
-            qs('#reportCount').textContent = payload.data.length + (payload.data.length === 1 ? ' día' : ' días');
-            setStatus('Reporte generado: ' + payload.data.length + ' días.');
+            state.reportItems = payload.data || [];
+            state.reportSummary = payload.resumen || [];
+            state.selectedIncident = null;
+            renderReport(state.reportItems);
+            renderReportSummary(state.reportSummary);
+            qs('#reportWarning').textContent = payload.advertencia || 'Los resultados requieren validación de Recursos Humanos.';
+            qs('#reportCount').textContent = state.reportItems.length + (state.reportItems.length === 1 ? ' incidencia' : ' incidencias');
+            setStatus('Reporte generado: ' + state.reportItems.length + ' incidencias.');
         }).catch(function (error) {
             setStatus('No se pudo generar el reporte.');
             showToast(error.message, 'error');
@@ -662,17 +737,100 @@
         var tbody = qs('#reportTable');
         tbody.textContent = '';
         if (!items.length) {
-            emptyTable(tbody, 'No hay asistencias en el rango seleccionado.', 4);
+            emptyTable(tbody, 'No hay incidencias para los bloques asignados en el rango.', 9);
             return;
         }
-        items.forEach(function (item) {
+        items.forEach(function (item, index) {
             var row = document.createElement('tr');
+            row.className = 'is-selectable';
             row.appendChild(makeCell(displayDate(item.fecha, false)));
-            row.appendChild(makeCell(item.registros));
-            row.appendChild(makeCell(item.empleados));
-            row.appendChild(makeCell(item.incompletos));
+            row.appendChild(makeCell(item.numero_reloj));
+            row.appendChild(makeCell(item.empleado));
+            row.appendChild(makeCell(item.bloque));
+            row.appendChild(makeCell(item.hora_entrada_programada.slice(0, 5) + '-' + item.hora_salida_programada.slice(0, 5)));
+            row.appendChild(makeCell(text(item.entrada_real) + ' / ' + text(item.salida_real)));
+            row.appendChild(makeCell(item.codigo));
+            row.appendChild(makeCell(item.minutos));
+            row.appendChild(makeCell(item.estado));
+            row.addEventListener('click', function () { selectIncident(index); });
             tbody.appendChild(row);
         });
+    }
+
+    function renderReportSummary(items) {
+        var tbody = qs('#reportSummaryTable');
+        tbody.textContent = '';
+        if (!items.length) { emptyTable(tbody, 'No hay incidencias acumuladas.', 13); return; }
+        items.forEach(function (item) {
+            var row = document.createElement('tr');
+            ['mes', 'numero_reloj', 'empleado', 'r1', 'r2', 'rm', 's1', 's2', 'sm', 'oes', 'faltas', 'justificadas', 'dias_descuento_sugerido'].forEach(function (key) {
+                row.appendChild(makeCell(item[key]));
+            });
+            tbody.appendChild(row);
+        });
+    }
+
+    function selectIncident(index) {
+        state.selectedIncident = state.reportItems[index];
+        qsa('#reportTable tr').forEach(function (row, rowIndex) { row.classList.toggle('is-selected', rowIndex === index); });
+        if (!qs('#justificationForm')) { return; }
+        var item = state.selectedIncident;
+        qs('#selectedIncident').textContent = item.empleado + ' · ' + item.fecha + ' · ' + item.bloque + ' · ' + item.codigo + ' (' + item.incidencia + ')';
+        qs('#justificationType').value = item.tipo_justificacion || '';
+        qs('#justificationDescription').value = item.descripcion_justificacion || '';
+        qs('#justificationDocument').value = item.documento_referencia || '';
+        qs('#justificationAvoidDiscount').checked = true;
+        qs('#saveJustification').disabled = false;
+    }
+
+    function saveJustification(event) {
+        event.preventDefault();
+        var item = state.selectedIncident;
+        if (!item) { return; }
+        var payload = {
+            empleado_id: item.empleado_id,
+            asistencia_id: item.asistencia_id,
+            horario_id: item.horario_id,
+            fecha: item.fecha,
+            codigo_incidencia: item.codigo,
+            tipo_justificacion: qs('#justificationType').value,
+            descripcion: qs('#justificationDescription').value.trim(),
+            documento_referencia: qs('#justificationDocument').value.trim() || null,
+            estado: 'aprobada',
+            evita_descuento: qs('#justificationAvoidDiscount').checked
+        };
+        if (!payload.tipo_justificacion || !payload.descripcion) {
+            showToast('Selecciona el motivo y captura la descripción.', 'error');
+            return;
+        }
+        var button = qs('#saveJustification');
+        button.disabled = true;
+        api(config.justificaciones, { method: 'POST', body: payload }).then(function (response) {
+            showToast(response.message, 'success');
+            return loadReport();
+        }).catch(function (error) { showToast(error.message, 'error'); }).finally(function () {
+            button.disabled = !state.selectedIncident;
+        });
+    }
+
+    function exportReport() {
+        if (!state.reportItems.length) { showToast('Genera un reporte con incidencias antes de exportar.', 'error'); return; }
+        var headers = ['Fecha', 'ID', 'Empleado', 'Departamento', 'Bloque', 'Entrada programada', 'Salida programada', 'Entrada real', 'Salida real', 'Código', 'Incidencia', 'Minutos', 'Estado', 'Tipo justificación', 'Documento'];
+        var keys = ['fecha', 'numero_reloj', 'empleado', 'departamento', 'bloque', 'hora_entrada_programada', 'hora_salida_programada', 'entrada_real', 'salida_real', 'codigo', 'incidencia', 'minutos', 'estado', 'tipo_justificacion', 'documento_referencia'];
+        function csv(value) {
+            var output = value === null || typeof value === 'undefined' ? '' : String(value);
+            if (/^[=+\-@]/.test(output)) { output = "'" + output; }
+            return '"' + output.replace(/"/g, '""') + '"';
+        }
+        var lines = [headers.map(csv).join(',')].concat(state.reportItems.map(function (item) {
+            return keys.map(function (key) { return csv(item[key]); }).join(',');
+        }));
+        var blob = new Blob(['\ufeff' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'incidencias_biosync_' + qs('#reportFrom').value + '_' + qs('#reportTo').value + '.csv';
+        link.click();
+        URL.revokeObjectURL(link.href);
     }
 
     function testConnection(notify) {
@@ -708,12 +866,16 @@
         qs('#refreshImports').addEventListener('click', loadServerData);
         qs('#employeeForm').addEventListener('submit', saveEmployee);
         qs('#newEmployee').addEventListener('click', resetEmployeeForm);
+        qs('#createSchedule').addEventListener('click', createSchedule);
+        qs('#assignSchedule').addEventListener('click', assignSchedule);
         qs('#searchEmployees').addEventListener('click', loadEmployees);
         qs('#employeeSearch').addEventListener('keydown', function (event) {
             if (event.key === 'Enter') { event.preventDefault(); loadEmployees(); }
         });
         qs('#generateReport').addEventListener('click', loadReport);
         qs('#refreshReport').addEventListener('click', loadReport);
+        qs('#exportReport').addEventListener('click', exportReport);
+        if (qs('#justificationForm')) { qs('#justificationForm').addEventListener('submit', saveJustification); }
         qs('#testConnection').addEventListener('click', function () { testConnection(true); });
         if (qs('#userForm')) {
             qs('#userForm').addEventListener('submit', saveUser);

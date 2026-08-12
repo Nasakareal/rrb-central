@@ -125,8 +125,34 @@
                             <datalist id="positionOptions"></datalist>
                             <label for="employeeEmail">Correo</label>
                             <input id="employeeEmail" name="correo" type="email" maxlength="190">
+                            <label for="employeeType">Tipo de personal</label>
+                            <select id="employeeType" required>
+                                <option value="administrativo">Administrativo</option>
+                                <option value="docente">Docente</option>
+                                <option value="confianza">Confianza</option>
+                                <option value="otro">Otro</option>
+                            </select>
                             <label class="check-row" for="employeeActive"><input id="employeeActive" type="checkbox" checked><span>Empleado activo</span></label>
                             <div class="form-actions"><button class="button button-primary" id="saveEmployee" type="submit">Registrar usuario</button><button class="button button-secondary" id="newEmployee" type="button">Nuevo</button></div>
+
+                            <div class="schedule-editor">
+                                <strong>Bloques asignados</strong>
+                                <p id="employeeAssignedSchedules">Guarda o selecciona un empleado para asignarle horarios.</p>
+                                <label for="employeeSchedule">Bloque existente</label>
+                                <select id="employeeSchedule"><option value="">Seleccionar...</option></select>
+                                <label for="scheduleStart">Vigente desde</label>
+                                <input id="scheduleStart" type="date">
+                                <button class="button button-secondary" id="assignSchedule" type="button">Asignar bloque</button>
+
+                                <details>
+                                    <summary>Crear bloque nuevo</summary>
+                                    <label for="newScheduleName">Nombre</label>
+                                    <input id="newScheduleName" type="text" maxlength="150" placeholder="Ej. Matemáticas lunes 08:00">
+                                    <div class="schedule-times"><label for="newScheduleEntry">Entrada<input id="newScheduleEntry" type="time"></label><label for="newScheduleExit">Salida<input id="newScheduleExit" type="time"></label></div>
+                                    <fieldset class="weekday-picker"><legend>Días</legend><label><input type="checkbox" value="1" checked>Lu</label><label><input type="checkbox" value="2" checked>Ma</label><label><input type="checkbox" value="3" checked>Mi</label><label><input type="checkbox" value="4" checked>Ju</label><label><input type="checkbox" value="5" checked>Vi</label><label><input type="checkbox" value="6">Sa</label><label><input type="checkbox" value="7">Do</label></fieldset>
+                                    <button class="button button-secondary" id="createSchedule" type="button">Crear bloque</button>
+                                </details>
+                            </div>
                         </form>
 
                         <div class="panel table-panel employee-list">
@@ -146,10 +172,47 @@
                         <label for="reportTo">Hasta<input id="reportTo" type="date"></label>
                         <button class="button button-primary" id="generateReport" type="button">Generar</button>
                         <button class="button button-secondary" id="refreshReport" type="button">Actualizar poleos</button>
+                        <button class="button button-secondary" id="exportReport" type="button">Exportar CSV</button>
                     </div>
                     <div class="panel table-panel">
-                        <div class="panel-heading"><div><span class="eyebrow">Concentrado diario</span><h2>Resumen de asistencia</h2></div><span class="record-count" id="reportCount">0 días</span></div>
-                        <div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Registros</th><th>Empleados</th><th>Incompletos</th></tr></thead><tbody id="reportTable"></tbody></table></div>
+                        <div class="panel-heading"><div><span class="eyebrow">Nómina · cálculo sugerido</span><h2>Concentrado mensual</h2></div><span class="record-count" id="reportCount">0 incidencias</span></div>
+                        <p class="table-hint" id="reportWarning">Los resultados requieren validación de Recursos Humanos.</p>
+                        <div class="table-wrap"><table><thead><tr><th>Mes</th><th>ID</th><th>Empleado</th><th>R1</th><th>R2</th><th>RM</th><th>S1</th><th>S2</th><th>SM</th><th>OES</th><th>Faltas</th><th>Justificadas</th><th>Días sugeridos</th></tr></thead><tbody id="reportSummaryTable"></tbody></table></div>
+                    </div>
+
+                    <div class="report-layout">
+                        <div class="panel table-panel">
+                            <div class="panel-heading"><div><span class="eyebrow">Reglamento UTM 2018</span><h2>Incidencias por bloque</h2></div></div>
+                            <p class="table-hint">Selecciona una incidencia para justificarla. R = retardo, S = salida anticipada, OES = omisión de entrada o salida.</p>
+                            <div class="table-wrap report-detail-wrap"><table><thead><tr><th>Fecha</th><th>ID</th><th>Empleado</th><th>Bloque</th><th>Programado</th><th>Real</th><th>Código</th><th>Min.</th><th>Estado</th></tr></thead><tbody id="reportTable"></tbody></table></div>
+                        </div>
+
+                        @can('gestionar justificaciones biosync')
+                        <form class="panel justification-form" id="justificationForm">
+                            <div class="panel-heading"><div><span class="eyebrow">Control administrativo</span><h2>Justificar incidencia</h2></div></div>
+                            <p id="selectedIncident">Selecciona una incidencia pendiente.</p>
+                            <label for="justificationType">Motivo autorizado</label>
+                            <select id="justificationType" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="incapacidad_imss">Incapacidad IMSS</option>
+                                <option value="atencion_medica_hijo">Atención médica de hijo menor</option>
+                                <option value="receta_imss">Receta IMSS</option>
+                                <option value="comision_oficial">Comisión oficial</option>
+                                <option value="pase_salida">Pase de salida autorizado</option>
+                                <option value="permiso_economico">Permiso económico</option>
+                                <option value="defuncion">Defunción de familiar</option>
+                                <option value="omision_reloj">Omisión de reloj reportada</option>
+                                <option value="permiso_maternidad">Permiso por maternidad</option>
+                                <option value="otra_ley_laboral">Otra causa de ley</option>
+                            </select>
+                            <label for="justificationDescription">Descripción</label>
+                            <textarea id="justificationDescription" rows="5" maxlength="2000" required></textarea>
+                            <label for="justificationDocument">Documento / folio</label>
+                            <input id="justificationDocument" type="text" maxlength="255" placeholder="Folio, oficio, incapacidad, pase...">
+                            <label class="check-row"><input id="justificationAvoidDiscount" type="checkbox" checked><span>No incluir en descuento sugerido</span></label>
+                            <button class="button button-primary" id="saveJustification" type="submit" disabled>Guardar justificación</button>
+                        </form>
+                        @endcan
                     </div>
                 </section>
 

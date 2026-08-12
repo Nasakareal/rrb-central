@@ -14,7 +14,7 @@ class EmpleadoController extends Controller
     {
         $perPage = max(1, min((int) $request->input('per_page', 50), 100));
 
-        $query = Empleado::with(['campus', 'departamento', 'puesto'])
+        $query = Empleado::with(['campus', 'departamento', 'puesto', 'horarios'])
             ->orderBy('nombre')
             ->orderBy('numero_reloj');
 
@@ -122,6 +122,7 @@ class EmpleadoController extends Controller
             'apellido_paterno' => ['nullable', 'string', 'max:100'],
             'apellido_materno' => ['nullable', 'string', 'max:100'],
             'correo' => ['nullable', 'email', 'max:190'],
+            'tipo_personal' => ['nullable', Rule::in(['administrativo', 'docente', 'confianza', 'otro'])],
             'campus_id' => ['nullable', 'integer', 'exists:campus,id'],
             'departamento_id' => ['nullable', 'integer', 'exists:departamentos,id'],
             'puesto_id' => ['nullable', 'integer', 'exists:puestos,id'],

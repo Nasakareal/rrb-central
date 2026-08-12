@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\EmpleadoController;
 use App\Http\Controllers\Api\PoleoCatalogController;
 use App\Http\Controllers\Api\PoleoImportController;
 use App\Http\Controllers\Api\RelojMarcaController;
+use App\Http\Controllers\Api\AsistenciaIncidenciaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,9 @@ Route::middleware('poleos.token')->prefix('poleos')->group(function () {
     Route::get('/asistencias', [PoleoImportController::class, 'asistencias']);
     Route::get('/importaciones', [PoleoImportController::class, 'importaciones']);
     Route::get('/reportes', [PoleoImportController::class, 'reportes']);
+    Route::get('/incidencias', [AsistenciaIncidenciaController::class, 'index']);
+    Route::get('/incidencias/resumen', [AsistenciaIncidenciaController::class, 'resumen']);
+    Route::post('/justificaciones', [AsistenciaIncidenciaController::class, 'store']);
     Route::get('/catalogos', [PoleoCatalogController::class, 'index']);
     Route::post('/campus', [PoleoCatalogController::class, 'storeCampus']);
     Route::post('/departamentos', [PoleoCatalogController::class, 'storeDepartamento']);

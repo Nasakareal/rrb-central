@@ -13,6 +13,7 @@ class Empleado extends Model
         'apellido_paterno',
         'apellido_materno',
         'correo',
+        'tipo_personal',
         'campus_id',
         'departamento_id',
         'puesto_id',
@@ -49,5 +50,10 @@ class Empleado extends Model
         return $this->belongsToMany(Horario::class, 'empleado_horarios')
             ->withPivot(['fecha_inicio', 'fecha_fin', 'activo'])
             ->withTimestamps();
+    }
+
+    public function justificaciones()
+    {
+        return $this->hasMany(AsistenciaJustificacion::class);
     }
 }

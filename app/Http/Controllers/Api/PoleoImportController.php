@@ -6,11 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Models\Asistencia;
 use App\Models\Empleado;
 use App\Models\PoleoImportado;
+use App\Services\BioSyncImportService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PoleoImportController extends Controller
 {
+    private $importador;
+
+    public function __construct(BioSyncImportService $importador)
+    {
+        $this->importador = $importador;
+    }
+
     public function importaciones(Request $request)
     {
         $perPage = max(1, min((int) $request->input('per_page', 50), 100));
@@ -78,70 +86,12 @@ class PoleoImportController extends Controller
             'registros.*.salida' => ['nullable', 'date_format:H:i:s'],
             'registros.*.marcas' => ['required', 'integer', 'min:1'],
             'registros.*.observaciones' => ['nullable', 'string'],
+            'marcas_detalle' => ['nullable', 'array', 'max:100000'],
+            'marcas_detalle.*.numero_reloj' => ['required', 'string', 'max:50'],
+            'marcas_detalle.*.fecha_hora' => ['required', 'date_format:Y-m-d H:i:s'],
         ]);
 
-        $resultado = DB::transaction(function () use ($data) {
-            $poleo = PoleoImportado::firstOrCreate(
-                ['hash_archivo' => $data['hash']],
-                [
-                    'nombre_archivo' => $data['archivo'],
-                    'total_registros' => count($data['registros']),
-                ]
-            );
-
-            $importadas = 0;
-            $duplicadas = 0;
-
-            foreach ($data['registros'] as $registro) {
-                $empleado = Empleado::firstOrCreate(
-                    ['numero_reloj' => $registro['numero_reloj']],
-                    [
-                        'numero_empleado' => $registro['numero_empleado'] ?? null,
-                        'nombre' => $registro['nombre'] ?? null,
-                        'apellido_paterno' => $registro['apellido_paterno'] ?? null,
-                        'apellido_materno' => $registro['apellido_materno'] ?? null,
-                        'campus_id' => $registro['campus_id'] ?? null,
-                        'departamento_id' => $registro['departamento_id'] ?? null,
-                        'puesto_id' => $registro['puesto_id'] ?? null,
-                    ]
-                );
-
-                if (!$empleado->wasRecentlyCreated) {
-                    $this->completarDatosEmpleado($empleado, $registro);
-                }
-
-                $llaveRegistro = $this->crearLlaveRegistro(
-                    $empleado->id,
-                    $registro['fecha'],
-                    $registro['entrada'],
-                    $registro['salida'] ?? null
-                );
-
-                $asistencia = Asistencia::firstOrCreate(
-                    [
-                        'llave_registro' => $llaveRegistro,
-                    ],
-                    [
-                        'empleado_id' => $empleado->id,
-                        'fecha' => $registro['fecha'],
-                        'entrada' => $registro['entrada'],
-                        'salida' => $registro['salida'] ?? null,
-                        'total_marcas' => $registro['marcas'],
-                        'observaciones' => $registro['observaciones'] ?? null,
-                        'archivo_origen' => $data['archivo'],
-                    ]
-                );
-
-                $asistencia->wasRecentlyCreated ? $importadas++ : $duplicadas++;
-            }
-
-            return [
-                'archivo_duplicado' => !$poleo->wasRecentlyCreated,
-                'total_registros' => count($data['registros']),
-                'importadas' => $importadas,
-                'duplicadas' => $duplicadas,
-            ];
-        });
+        $resultado = $this->importador->importar($data);
 
         return response()->json([
             'message' => 'Poleo importado correctamente.',

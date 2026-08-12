@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Asistencia;
 use App\Models\Empleado;
 use App\Models\PoleoImportado;
+use App\Models\RelojMarca;
 use Illuminate\Support\Facades\DB;
 
 class BioSyncImportService
@@ -71,11 +72,25 @@ class BioSyncImportService
                 }
             }
 
+            foreach ($data['marcas_detalle'] ?? [] as $indice => $marca) {
+                RelojMarca::firstOrCreate(
+                    ['clave' => hash('sha256', implode('|', [
+                        $data['hash'], $marca['numero_reloj'], $marca['fecha_hora'], $indice,
+                    ]))],
+                    [
+                        'dispositivo_id' => 'archivo:' . substr($data['hash'], 0, 32),
+                        'numero_reloj' => $marca['numero_reloj'],
+                        'fecha_hora' => $marca['fecha_hora'],
+                    ]
+                );
+            }
+
             return [
                 'archivo_duplicado' => !$poleo->wasRecentlyCreated,
                 'total_registros' => count($data['registros']),
                 'importadas' => $importadas,
                 'duplicadas' => $duplicadas,
+                'marcas_detalle' => count($data['marcas_detalle'] ?? []),
             ];
         });
     }

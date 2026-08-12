@@ -10,6 +10,7 @@ class Horario extends Model
         'nombre',
         'hora_entrada',
         'hora_salida',
+        'dias_semana',
         'tolerancia_entrada_minutos',
         'tolerancia_salida_minutos',
         'activo',

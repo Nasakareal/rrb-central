@@ -71,6 +71,7 @@ class PoleoCatalogController extends Controller
             'nombre' => ['required', 'string', 'max:150'],
             'hora_entrada' => ['required', 'date_format:H:i:s'],
             'hora_salida' => ['required', 'date_format:H:i:s'],
+            'dias_semana' => ['nullable', 'regex:/^[1-7](,[1-7])*$/'],
             'tolerancia_entrada_minutos' => ['nullable', 'integer', 'min:0', 'max:1440'],
             'tolerancia_salida_minutos' => ['nullable', 'integer', 'min:0', 'max:1440'],
             'activo' => ['nullable', 'boolean'],

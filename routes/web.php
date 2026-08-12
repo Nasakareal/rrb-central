@@ -38,10 +38,15 @@ Route::prefix('biosync-utm')->name('biosync.')->group(function () {
             Route::post('/empleados', [BioSyncWebController::class, 'guardarEmpleado'])->name('empleados.store');
             Route::put('/empleados/{empleado}', [BioSyncWebController::class, 'guardarEmpleado'])->name('empleados.update');
             Route::get('/catalogos', [BioSyncWebController::class, 'catalogos'])->name('catalogos');
+            Route::post('/horarios', [BioSyncWebController::class, 'guardarHorario'])->name('horarios.store');
+            Route::post('/empleados/{empleado}/horarios', [BioSyncWebController::class, 'asignarHorario'])->name('empleados.horarios.store');
         });
 
         Route::get('/reportes', [BioSyncWebController::class, 'reportes'])
             ->middleware('permission:ver reportes biosync')->name('reportes');
+
+        Route::post('/justificaciones', [BioSyncWebController::class, 'guardarJustificacion'])
+            ->middleware('permission:gestionar justificaciones biosync')->name('justificaciones.store');
 
         Route::middleware('permission:gestionar usuarios biosync')->group(function () {
             Route::get('/usuarios', [BioSyncUserController::class, 'index'])->name('usuarios');
