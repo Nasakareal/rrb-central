@@ -1,7 +1,7 @@
 {
-    "latest_version":  "0.3.0",
-    "download_url":  "https://rrb-soluciones.com/biosync/BioSync.exe",
-    "sha256":  "58A5E9D75BDED02127DD410D753FA0DE779577830981C57918248102C43EF922",
-    "required":  true,
-    "message":  "BioSync 0.3.0 agrega reportes de incidencias por bloque, concentrado de descuento sugerido, exportacion CSV y justificaciones administrativas."
+  "latest_version": "0.3.1",
+  "download_url": "https://rrb-soluciones.com/biosync/BioSync.exe",
+  "sha256": "37FDC24223FC6D5818774511994652ED5533E21CB57D008A663BF9E7097EF7CA",
+  "required": true,
+  "message": "BioSync 0.3.1 activa la sincronizacion automatica en instalaciones existentes y fuerza la actualizacion del equipo de campo."
 }
