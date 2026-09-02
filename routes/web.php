@@ -73,6 +73,8 @@ Route::prefix('centauros')->group(function () {
 
 // Invitación Anya (pública)
 Route::view('/anya', 'invitaciones.anya')->name('anya');
+// Invitación Julio Ernesto Bautista Jiménez (pública)
+Route::view('/julio-ernesto', 'invitaciones.julio-ernesto')->name('julio-ernesto');
 
 Route::view('/mensaje/uno', 'mensaje.uno')->name('uno');
 

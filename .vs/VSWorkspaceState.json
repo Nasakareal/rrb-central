@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\resources",
-    "\\resources\\views"
+    "\\resources\\views",
+    "\\resources\\views\\invitaciones",
+    "\\resources\\views\\invitaciones\\Camila",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\welcome.blade.php",
+  "SelectedNode": "\\resources\\views\\invitaciones\\julio-ernesto.blade.php",
   "PreviewInSolutionExplorer": false
 }
