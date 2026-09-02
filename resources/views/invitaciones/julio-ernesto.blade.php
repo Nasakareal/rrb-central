@@ -1,6 +1,6 @@
 @php
     $nombre = 'JULIO ERNESTO';
-    $apellido = 'BAUTISTA JIMÉNEZ';
+    $apellido = 'BAUTISTA CASTAÑO';
 
     $fechaTexto = 'SÁBADO 26 DE SEPTIEMBRE';
     $fechaISO = '2026-09-26T14:00:00-06:00';
