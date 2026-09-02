@@ -22,7 +22,8 @@
 
     <title>Cumpleaños de {{ $nombre }}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('images/julio/julio-favicon-256.png') }}?v=1">
+    <link rel="apple-touch-icon" href="{{ asset('images/julio/julio-favicon-256.png') }}?v=1">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
